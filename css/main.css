@@ -1,5 +1,38 @@
-* {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+button {
+  cursor: pointer;
+}
+abbr {
+  text-decoration: none;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+  margin: 12px;
+  border-radius: 30px;
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+}
+.logo {
+  & span {
+    font-size: 50px;
+    color: #202020;
+  }
+}
+.utility {
+  & ul {
+    display: flex;
+    gap: 10px;
+  }
+  & button {
+    border: none;
+    background: transparent;
+    color: rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+    &:hover,
+    &:focus {
+      transform: translateY(-5px);
+      color: rgba(0, 0, 0, 1);
+    }
+  }
 }
