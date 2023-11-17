@@ -8,6 +8,7 @@
   --gray67: #67748e;
   --grayf8: #f8faff;
 }
+
 /* normalize */
 button {
   cursor: pointer;
@@ -57,7 +58,7 @@ body {
 /* 메뉴 */
 .side-nav {
   width: 300px;
-  background: var(--grayf8);
+  background: linear-gradient(to bottom, var(--grayf8), var(--grayf8));
   transition: 0.4s;
   & button {
     display: flex;
@@ -84,6 +85,7 @@ body {
     box-shadow: 0 0 20px 3px rgba(var(--black), 0.05);
     background: var(--white);
     color: var(--gray29);
+    transition: 0.4s;
   }
   &.--active {
     margin-left: -300px;

@@ -1,4 +1,4 @@
-export function SideNav() {
+export function ToggleNav() {
   const $btnMenu = document.querySelector(".btn-menu");
   const $sideNav = document.querySelector(".side-nav");
 

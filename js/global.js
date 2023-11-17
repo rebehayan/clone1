@@ -1,8 +1,8 @@
-import { SideNav } from "./ui/SideNav.js";
+import { ToggleNav } from "./ui/ToggleNav.js";
 import { Toggle } from "./ui/Toggle.js";
 
 //방법1
-// SideNav();
+// ToggleNav();
 
 // 방법2
 Toggle({
