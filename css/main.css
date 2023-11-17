@@ -1,9 +1,17 @@
+/* normalize */
 button {
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 abbr {
   text-decoration: none;
 }
+body {
+  background: #f8faff;
+}
+
+/* 헤더 */
 .header {
   display: flex;
   justify-content: space-between;
@@ -26,7 +34,6 @@ abbr {
   }
   & button {
     border: none;
-    background: transparent;
     color: rgba(0, 0, 0, 0.5);
     transition: 0.5s;
     &:hover,
@@ -35,4 +42,40 @@ abbr {
       color: rgba(0, 0, 0, 1);
     }
   }
+}
+
+/* 메뉴 */
+.side-nav {
+  width: 300px;
+  background: #f8faff;
+  transition: 0.4s;
+  & button {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 13px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #67748e;
+  }
+  & span {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+    background: #fff;
+    color: #202020;
+  }
+  &.--active {
+    margin-left: -300px;
+  }
+}
+
+/* 기본레이아웃 */
+main {
+  padding: 15px 0 0;
+  background: #fff;
 }
