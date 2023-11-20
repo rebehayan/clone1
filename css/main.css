@@ -269,6 +269,7 @@ body.--fixed {
       font-size: 1.2rem;
       font-weight: 500;
       gap: 0.5rem;
+      &.--current,
       &:hover {
         color: var(--green);
       }
@@ -687,6 +688,42 @@ body.--fixed {
 }
 
 /* 정렬 */
+.align {
+  display: flex;
+  &.center {
+    justify-content: center;
+  }
+  &.left {
+    justify-content: flex-start;
+  }
+  &.right {
+    justify-content: flex-end;
+  }
+  &.vt {
+    align-items: flex-start;
+  }
+  &.vm {
+    align-items: center;
+  }
+  &.vb {
+    align-items: flex-end;
+  }
+}
 .txt-center {
   text-align: center;
+}
+.txt-left {
+  text-align: left;
+}
+.txt-right {
+  text-align: right;
+}
+
+/* 가이드전용 */
+.guide-block {
+  border: 1px dashed var(--grayca);
+  margin: 1rem 0 2rem;
+  padding: 1rem;
+  min-height: 5rem;
+  border-radius: 0.8rem;
 }

@@ -105,169 +105,84 @@
     </nav>
     <main class="contents">
       <!-- 본문 -->
-      <h2 class="heading large">CSS Guide</h2>
-      <h3 class="heading regular">기본 규칙</h3>
-      <h4 class="heading small">대소문자</h4>
-      <p>모든 속성은 영문 소문자로만 작성</p>
-      <pre>
-  <code class="css">/* 잘못된 예 */
-.class-name {color:#FFF;}
-
-/* 올바른 예 */
-.class-name {color:#fff;}</code>
-      </pre>
-      <h4 class="heading small">세미콜론(;)</h4>
-      <p>마지막 선언된 속성에도 세미콜론(;)을 사용한다.</p>
-      <pre>
-  <code class="css">/* 잘못된 예 */
-.class-name {margin-left:0; padding-left:10px}
-
-/* 올바른 예 */
-.class-name {margin-left:0; padding-left:10px;}</code>
-      </pre>
-
-      <h4 class="heading small">줄내림</h4>
+      <h2 class="heading large">Align Guide</h2>
       <ul class="list-type1">
-        <li>CSS 속성마다 줄내림 한다.</li>
-        <li>쉼표(,) 선택자는 줄내림 한다.</li>
-        <li>단일 속성은 줄내림하지 않는다.</li>
+        <li>부모, 자식으로 구성된 레이아웃이어야 한다.</li>
+        <li>요소의 종류와 상관없이 클래스명으로만 제어한다.</li>
       </ul>
+      <h3 class="heading small">요소 수평정렬</h3>
+      <div class="guide-block">
+        <div class="align center">가운데정렬</div>
+      </div>
       <pre>
-<code class="css">/* 잘못된 예 */
-h5.class-name { font-size:1.25rem; letter-spacing:-1px; margin:0.5rem 0 0 0; }
-
-/* 올바른 예 */
-.title,
-.box,
-.block {
-  padding:0.5rem;
-}
-
-h5.class-name {
-  font-size:1.25rem;
-  letter-spacing:-1px;
-  margin:0.5rem 0 0 0;
-}
-
-.text-desc { color:#000; }</code>
+<code class="html">&lt;div class=&quot;align center&quot;&gt;
+  // 자식요소 삽입
+&lt;/div&gt;</code>
+    </pre>
+      <div class="guide-block">
+        <div class="align left">좌측정렬</div>
+      </div>
+      <pre>
+<code class="html">&lt;div class=&quot;align left&quot;&gt;
+  // 자식요소 삽입
+&lt;/div&gt;</code>
       </pre>
 
-      <h4 class="heading small">주석</h4>
-      <ul class="list-type1">
-        <li>CSS 주석 처리는 시작 주석을 작성하며 종료 주석은 작성하지 않는다.</li>
-        <li>종료코드 이후에 오는 요소에 한 칸 띄어 쓰기를 허용한다.</li>
-      </ul>
+      <div class="guide-block">
+        <div class="align right">우측정렬</div>
+      </div>
       <pre>
-<code class="css">/* 제목 */
-.title-type1 {margin:3rem;}
-
-/* 상세설명 */
-.desc1 {
-  padding:0.2rem 0 0 1.5rem;
-  font-size:1rem;
-}</code>
+<code class="html">&lt;div class=&quot;align right&quot;&gt;
+  // 자식요소 삽입
+&lt;/div&gt;</code>
       </pre>
 
-      <h4 class="heading small">빈줄</h4>
-      <ul class="list-type1">
-        <li>객체를 구분하기 위하여 코드 그룹 간 1줄의 빈 줄을 허용한다.</li>
-        <li>빈 줄의 1줄을 초과하지 않는다.</li>
-      </ul>
-      <pre>
-<code class="css">/* 잘못된 예 */
-.title-type1 {margin:3rem;}
-.desc1 {
-  padding:0.2rem 0 0 1.5rem;
-  font-size:1rem;
-}
+      <h3 class="heading small">요소 수직정렬</h3>
+      <div class="guide-block align center vt">
+        <div>상단정렬</div>
+      </div>
+      <pre><code class="html">&lt;div class=&quot;align center vt&quot;&gt;
+  // 자식요소 삽입
+&lt;/div&gt;</code>
+    </pre>
+      <div class="guide-block align center vm">
+        <div>중단정렬</div>
+      </div>
+      <pre><code class="html">&lt;div class=&quot;align center vm&quot;&gt;
+  // 자식요소 삽입
+&lt;/div&gt;</code>
+    </pre>
+      <div class="guide-block align center vb">
+        <div>하단정렬</div>
+      </div>
+      <pre><code class="html">&lt;div class=&quot;align center vb&quot;&gt;
+  // 자식요소 삽입
+&lt;/div&gt;</code>
+    </pre>
 
-/* 올바른 예 */
-.title-type1 {margin:3rem;}
-
-.desc1 {
-  padding:0.2rem 0 0 1.5rem;
-  font-size:1rem;
-}</code>
-      </pre>
-      <h3 class="heading regular">선택자</h3>
-      <h4 class="heading small">공통 선택자</h4>
-      <p>'*' 공통 선택자는 웹 페이지의 성능을 저하를 가져오기 때문에 사용하지 않는다.</p>
-      <pre>
-  <code class="css">/* 잘못된 예 */
-* {margin:0; padding:0;}</code>
-      </pre>
-      <h4 class="heading small">id와 class</h4>
-      <ul class="list-type1">
-        <li>id와 class를 조합하여 사용하지 않는다.</li>
-        <li>id를 css로 표현하기 위하여 선택자로 사용하지 않는다.</li>
-        <li>id는 label 또는 본문바로가기 등 내부링크에만 사용한다.</li>
-      </ul>
-      <pre>
-<code class="css">/* 잘못된 예 */
-#header .lnb {margin:0; padding:0;}
-#lnb {position:relative;}
-
-/* 올바른 예 */
-.lnb {position:relative;}
-.lnb a {display:block;}</code>
-      </pre>
-
-      <h4 class="heading small">속성의 선언 순서</h4>
-      <pre>
-<code class="css">.selector{
-  overflow : visible, hidden, auto;
-  display : block, inline-block, flex, grid;
-  position : absolute, fixed, sticky / left, right, top, bottom, z-index;
-  width : min-width, max-width, clamp;
-  height : min-height, max-height, clamp;
-  margin
-  padding
-  border
-  background
-  font : color, line-height, font-weight, letter-spacing, font-size;
-  etc : animation, transition, transform;
-}</code>
-      </pre>
-
-      <h4 class="heading small">속성의 축약/약식 속성 사용</h4>
-      <p>CSS 최적화를 위해 속성값을 축약 한다.</p>
-      <table class="table-type1 txt-center">
-        <caption>축약 표현 예시</caption>
-        <thead>
-          <tr>
-            <th>축약 전</th>
-            <th>축약 후</th>
-            <th>설명</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>#ffffff</td>
-            <td>#fff</td>
-            <td>6번 연속된 숫자나 문자는 3글자로 축약한다.</td>
-          </tr>
-          <tr>
-            <td>top:0px</td>
-            <td>top:0</td>
-            <td>속성의 값이 0일 경우 단위를 표시하지 않는다.</td>
-          </tr>
-          <tr>
-            <td>margin:15px 15px 15px 15px</td>
-            <td>margin:15px</td>
-            <td>속성의 값이 동일한 경우 축약한다.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h4 class="heading small">rem 사용</h4>
-      <ul class="list-type1">
-        <li>다양한 디바이스에 대응하기 위해 rem단위를 사용한다.</li>
-        <li>root font-size는 62.5%(10px)로 기준으로 한다. </li>
-      </ul>
-      <pre>
-<code class="css">html {font-size:62.5%;}
-body {font-size:1rem;}</code>
-      </pre>
+      <h3 class="heading small">텍스트 정렬</h3>
+      <p>inline, inline-block, inline-flex, inline-grid, text 등을 정렬 한다.</p>
+      <div class="guide-block txt-left">
+        텍스트 좌측정렬
+      </div>
+      <pre><code class="html">&lt;div class=&quot;txt-left&quot;&gt;
+// 텍스트
+&lt;/div&gt;</code>
+  </pre>
+      <div class="guide-block txt-center">
+        텍스트 가운데정렬
+      </div>
+      <pre><code class="html">&lt;div class=&quot;txt-center&quot;&gt;
+// 텍스트
+&lt;/div&gt;</code>
+  </pre>
+      <div class="guide-block txt-right">
+        텍스트 우측정렬
+      </div>
+      <pre><code class="html">&lt;div class=&quot;txt-right&quot;&gt;
+// 텍스트
+&lt;/div&gt;</code>
+  </pre>
 
     </main>
     <footer class="footer">&copy; FE Design System by HA SUNG PIL</footer>

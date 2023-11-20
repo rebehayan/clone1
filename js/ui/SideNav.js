@@ -9,6 +9,7 @@ export function SideNav(option = {}) {
   function init() {
     settings();
     bindEvent();
+    currentNavigation();
   }
 
   function bindEvent() {
@@ -43,6 +44,24 @@ export function SideNav(option = {}) {
     $btnDepth1.forEach(function (el) {
       el.classList.remove(config.activeClass);
       el.classList.remove("open");
+    });
+  }
+
+  function currentNavigation() {
+    let url = location.href; //현재 url
+    let urlinfo = new URL(url); //url 구조분석
+    let counturl = urlinfo.pathname; // 경로부분 추출
+    let count = counturl.indexOf("/", 2); // 두번째 단어(/)부터 추출
+    let isURL = counturl.slice(count + 1, -5); // 현재파일명 추출
+
+    $btnDepth1.forEach((el) => {
+      let text = el.getAttribute("data-href");
+
+      if (isURL.match(text)) {
+        el.classList.add("--current");
+        el.parentElement.parentElement.classList.add("--active");
+        el.parentElement.parentElement.previousElementSibling.classList.add("--active", "open");
+      }
     });
   }
 
