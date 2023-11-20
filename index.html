@@ -5,41 +5,273 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FrontEnd Design System</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FE Design System">
+  <meta property="og:title" content="프론트엔드 디자인 시스템">
+  <meta property="og:description" content="페이지 구성을 위한 디자인시스템을 정의하였습니다.">
+  <meta property="og:image" content="./favicon.svg">
+  <meta property="og:url" content="./url">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
   <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" href="./favicon.svg">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+    integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="module" defer src="js/global.js"></script>
 </head>
 
 <body>
   <header class="header">
-    <h1 class="logo"><a href=""><span class="material-symbols-outlined">HTML</span></a></h1>
+    <h1 class="logo"><a href="/"><span class="material-symbols-outlined">cognition</span>Project Design System Guide</a>
+    </h1>
+    <div class="search-bar">
+      <span class="material-symbols-outlined">search</span>
+      <input type="search" placeholder="Ctrl + P 검색">
+    </div>
     <nav class="utility">
       <ul>
-        <li><button><abbr title="전체보기" class="material-symbols-outlined">Expand</abbr></button></li>
-        <li><button><abbr title="다른서비스" class="material-symbols-outlined">Apps</abbr></button></li>
+        <li><button class="btn-search"><abbr title="검색" class="material-symbols-outlined">search</abbr></button></li>
+        <li><button class="btn-fullscreen"><abbr title="전체창보기" class="material-symbols-outlined">Expand</abbr></button>
+        </li>
+        <li>
+          <button class="btn-app"><abbr title="다른서비스" class="material-symbols-outlined">Apps</abbr></button>
+        </li>
         <li><button class="btn-menu"><abbr title="메뉴숨기기" class="material-symbols-outlined">exit_to_app</abbr></button>
         </li>
-        <li><button><abbr title="사이트설정" class="material-symbols-outlined">settings</abbr></button></li>
+        <li><button class="btn-setting"><abbr title="사이트설정" class="material-symbols-outlined">settings</abbr></button>
+        </li>
       </ul>
     </nav>
   </header>
-  <main>
+  <div class="container">
     <nav class="side-nav">
       <ul>
-        <li><button><span class="material-symbols-outlined">edit_document</span>IDE Setting</button></li>
-        <li><button><span class="material-symbols-outlined">text_fields</span>Typograph</button></li>
-        <li><button><span class="material-symbols-outlined">colorize</span>Color</button></li>
-        <li><button><span class="material-symbols-outlined">toggle_on</span>Button</button></li>
-        <li><button><span class="material-symbols-outlined">add_reaction</span>Badge</button></li>
-        <li><button><span class="material-symbols-outlined">tab</span>Tab</button></li>
-        <li><button><span class="material-symbols-outlined">responsive_layout</span>Layout</button></li>
-        <li><button><span class="material-symbols-outlined">table</span>Table</button></li>
-        <li><button><span class="material-symbols-outlined">table_view</span>Board</button></li>
+        <li>
+          <button><span class="material-symbols-outlined">Settings_applications</span>Settings</button>
+          <ul class="depth2">
+            <li><button><span class="material-symbols-outlined">edit_document</span>IDE Setting</button></li>
+            <li><button><span class="material-symbols-outlined">hub</span>Git Setting</button></li>
+          </ul>
+        </li>
+        <li>
+          <button><span class="material-symbols-outlined">code</span>Coding Convention</button>
+          <ul class="depth2">
+            <li><button role="link" data-href="folder"><i class="material-symbols-outlined">create_new_folder</i>Folder
+                Guide</button></li>
+            <li><button role="link" data-href="naming"><i class="material-symbols-outlined">fingerprint</i>Naming
+                Guide</button></li>
+            <li><button><span class="material-symbols-outlined">html</span>HTML Guide</button></li>
+            <li><button><span class="material-symbols-outlined">css</span>CSS Guide</button></li>
+            <li><button><span class="material-symbols-outlined">style</span>Sass Guide</button></li>
+            <li><button><span class="material-symbols-outlined">javascript</span>Javascript Guide</button></li>
+            <li><button><span class="material-symbols-outlined">code_blocks</span>React Guide</button></li>
+            <li><button><span class="material-symbols-outlined">settings_Accessibility</span>Accessibility</button></li>
+            <li><button><span class="material-symbols-outlined">crossword</span>Cross Browser</button></li>
+          </ul>
+        </li>
+        <li>
+          <button><span class="material-symbols-outlined">package_2</span>Component Guide</button>
+          <ul class="depth2">
+            <li><button><span class="material-symbols-outlined">colorize</span>Color</button></li>
+            <li><button><span class="material-symbols-outlined">text_fields</span>Typograph</button></li>
+            <li><button><span class="material-symbols-outlined">align_horizontal_left</span>Align</button></li>
+            <li><button><span class="material-symbols-outlined">responsive_layout</span>Layout</button></li>
+            <li><button><span class="material-symbols-outlined">toggle_on</span>Button</button></li>
+            <li><button><span class="material-symbols-outlined">add_reaction</span>Badge</button></li>
+            <li><button><span class="material-symbols-outlined">tab</span>Tab</button></li>
+            <li><button><span class="material-symbols-outlined">table</span>Table</button></li>
+            <li><button><span class="material-symbols-outlined">table_view</span>Board</button></li>
+            <li><button><span class="material-symbols-outlined">Dialogs</span>Dialog</button></li>
+            <li><button><span class="material-symbols-outlined">view_Carousel</span>Carousel</button></li>
+            <li><button><span class="material-symbols-outlined">insert_Chart</span>Chart</button></li>
+          </ul>
+        </li>
+        <li><button><span class="material-symbols-outlined">list_alt</span>Project Status</button></li>
       </ul>
     </nav>
-  </main>
+    <main class="contents">
+      <div class="index-visual">
+        <h2><span>Welcome Back</span>About FE Design System</h2>
+        <p>Your Project completed 80% of the tasks</p>
+      </div>
+      <h2 class="heading large">Guide List</h2>
+      <h3 class="heading regular">Settings</h3>
+      <ul class="guide-list">
+        <li>
+          <strong class="guide-list__title">IDE Setting</strong>
+          <p class="guide-list__detail">VS Code 기본 설정 및 확장도구 설치를 안내합니다.</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">Git Setting</strong>
+          <p class="guide-list__detail">git 설치 및 설정방법, github 연결방법, gitlab 연결방법등을 안내합니다.</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+      </ul>
+      <h3 class="heading regular">Coding Convention</h3>
+      <ul class="guide-list">
+        <li>
+          <strong class="guide-list__title">Folder Guide</strong>
+          <p class="guide-list__detail">프로젝트 진행을 위한 폴더 가이드</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">Naming Guide</strong>
+          <p class="guide-list__detail">클래스, 이미지 네이밍 가이드</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">HTML Guide</strong>
+          <p class="guide-list__detail">HTML코딩 규칙</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">CSS Guide</strong>
+          <p class="guide-list__detail">CSS표현 규칙</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">Sass Guide</strong>
+          <p class="guide-list__detail">Sass(SCSS) 코딩 가이드</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">Javascript Guide</strong>
+          <p class="guide-list__detail">자바스크립트 코딩 가이드</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">React Guide</strong>
+          <p class="guide-list__detail">리액트 코딩 가이드</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">Accessibility</strong>
+          <p class="guide-list__detail">접근성 가이드</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">Cross Browser</strong>
+          <p class="guide-list__detail">호환성 가이드</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+      </ul>
+      <h3 class="heading regular">Component Guide</h3>
+      <ul class="guide-list">
+        <li>
+          <strong class="guide-list__title">Color</strong>
+          <p class="guide-list__detail">색상 정의</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">Typograph</strong>
+          <p class="guide-list__detail">서체, 제목, 텍스트 정의</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">Align</strong>
+          <p class="guide-list__detail">정렬 정의</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">Layout</strong>
+          <p class="guide-list__detail">레이아웃 정의</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">Button</strong>
+          <p class="guide-list__detail">버튼 정의</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">Badge</strong>
+          <p class="guide-list__detail">뱃지 정의</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">Tab</strong>
+          <p class="guide-list__detail">탭메뉴 정의</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">Table</strong>
+          <p class="guide-list__detail">표 정의</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">Board</strong>
+          <p class="guide-list__detail">게시판 정의</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">Dialog</strong>
+          <p class="guide-list__detail">팝업, Alert, Confirm 정의</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">Carousel</strong>
+          <p class="guide-list__detail">슬라이드 정의</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+        <li>
+          <strong class="guide-list__title">Chart</strong>
+          <p class="guide-list__detail">그래프 정의</p>
+          <a href="" class="btn-more">View</a>
+        </li>
+      </ul>
+      <h3 class="heading regular">Project Status</h3>
+      <div class="state-block">
+        <div class="state-block__detail">
+          <ul>
+            <li class="blue">
+              <span class="material-symbols-outlined">html</span>
+              <strong>HTML</strong>
+              <div class="bar-graph">
+                <span class="bar-graph__count">90%</span>
+                <span class="bar-graph__data" style="width:90%"></span>
+              </div>
+            </li>
+            <li class="green">
+              <span class="material-symbols-outlined">css</span>
+              <strong>CSS</strong>
+              <div class="bar-graph">
+                <span class="bar-graph__count">80%</span>
+                <span class="bar-graph__data" style="width:80%"></span>
+              </div>
+            </li>
+            <li class="purple">
+              <span class="material-symbols-outlined">Javascript</span>
+              <strong>Javascript</strong>
+              <div class="bar-graph">
+                <span class="bar-graph__count">30%</span>
+                <span class="bar-graph__data" style="width:30%"></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">&copy; HA SUNG PIL</footer>
+  </div>
+  <dialog class="dialog-service">
+    <div class="dialog-service__header">
+      <h2 class="heading small">Author Apps</h2>
+      <button class="dialog-service__close"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <ul class="dialog-service__list">
+      <li><a href=""><img src="./images/ico_drive.png" alt="">Drive</a></li>
+      <li><a href=""><img src="./images/ico_git.png" alt="">Github</a></li>
+      <li><a href=""><img src="./images/ico_gmail.png" alt="">Gmail</a></li>
+      <li><a href=""><img src="./images/ico_kakao.png" alt="">OpenChat</a></li>
+      <li><a href=""><img src="./images/ico_behance.png" alt="">Behance</a></li>
+      <li><a href=""><img src="./images/ico_lms.png" alt="">LMS</a></li>
+      <li><a href=""><img src="./images/ico_velog.png" alt="">Blog</a></li>
+      <li><a href=""><img src="./images/ico_calendar.png" alt="">Calendar</a></li>
+    </ul>
+  </dialog>
+
 
 </body>
 

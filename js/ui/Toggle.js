@@ -8,9 +8,9 @@ export function Toggle(option = {}) {
   const $toggleBtn = document.querySelector(config.button);
   const $toggleTarget = document.querySelector(config.target);
 
-  $toggleBtn.addEventListener("click", openTarget);
-
-  console.log(config.targetClass);
+  function bindEvent() {
+    $toggleBtn.addEventListener("click", openTarget);
+  }
 
   function openTarget() {
     if ($toggleTarget.classList.contains(config.targetClass)) {
@@ -19,4 +19,6 @@ export function Toggle(option = {}) {
       $toggleTarget.classList.add(config.targetClass);
     }
   }
+
+  bindEvent();
 }

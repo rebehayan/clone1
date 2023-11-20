@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrontEnd Design System</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FE Design System">
+  <meta property="og:title" content="프론트엔드 디자인 시스템">
+  <meta property="og:description" content="페이지 구성을 위한 디자인시스템을 정의하였습니다.">
+  <meta property="og:image" content="/favicon.svg">
+  <meta property="og:url" content="./url">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+    integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="module" defer src="/js/global.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+  <script
+    src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
+
+  <script>hljs.highlightAll();</script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+
+
+</head>
+
+<body>
+  <!-- 헤더 -->
+  <header class="header">
+    <h1 class="logo"><a href="/"><span class="material-symbols-outlined">cognition</span>Project Design System Guide</a>
+    </h1>
+    <div class="search-bar">
+      <span class="material-symbols-outlined">search</span>
+      <input type="search" placeholder="Ctrl + P 검색">
+    </div>
+    <nav class="utility">
+      <ul>
+        <li><button class="btn-search"><abbr title="검색" class="material-symbols-outlined">search</abbr></button></li>
+        <li><button class="btn-fullscreen"><abbr title="전체창보기" class="material-symbols-outlined">Expand</abbr></button>
+        </li>
+        <li>
+          <button class="btn-app"><abbr title="다른서비스" class="material-symbols-outlined">Apps</abbr></button>
+        </li>
+        <li><button class="btn-menu"><abbr title="메뉴숨기기" class="material-symbols-outlined">exit_to_app</abbr></button>
+        </li>
+        <li><button class="btn-setting"><abbr title="사이트설정" class="material-symbols-outlined">settings</abbr></button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <!-- 메뉴 -->
+    <nav class="side-nav">
+      <ul>
+        <li>
+          <button><span class="material-symbols-outlined">Settings_applications</span>Settings</button>
+          <ul class="depth2">
+            <li><button><span class="material-symbols-outlined">edit_document</span>IDE Setting</button></li>
+            <li><button><span class="material-symbols-outlined">hub</span>Git Setting</button></li>
+          </ul>
+        </li>
+        <li>
+          <button><span class="material-symbols-outlined">code</span>Coding Convention</button>
+          <ul class="depth2">
+            <li><button role="link" data-href="folder"><i class="material-symbols-outlined">create_new_folder</i>Folder
+                Guide</button></li>
+            <li><button role="link" data-href="naming"><i class="material-symbols-outlined">fingerprint</i>Naming
+                Guide</button></li>
+            <li><button><span class="material-symbols-outlined">html</span>HTML Guide</button></li>
+            <li><button><span class="material-symbols-outlined">css</span>CSS Guide</button></li>
+            <li><button><span class="material-symbols-outlined">style</span>Sass Guide</button></li>
+            <li><button><span class="material-symbols-outlined">javascript</span>Javascript Guide</button></li>
+            <li><button><span class="material-symbols-outlined">code_blocks</span>React Guide</button></li>
+            <li><button><span class="material-symbols-outlined">settings_Accessibility</span>Accessibility</button></li>
+            <li><button><span class="material-symbols-outlined">crossword</span>Cross Browser</button></li>
+          </ul>
+        </li>
+        <li>
+          <button><span class="material-symbols-outlined">package_2</span>Component Guide</button>
+          <ul class="depth2">
+            <li><button><span class="material-symbols-outlined">colorize</span>Color</button></li>
+            <li><button><span class="material-symbols-outlined">text_fields</span>Typograph</button></li>
+            <li><button><span class="material-symbols-outlined">align_horizontal_left</span>Align</button></li>
+            <li><button><span class="material-symbols-outlined">responsive_layout</span>Layout</button></li>
+            <li><button><span class="material-symbols-outlined">toggle_on</span>Button</button></li>
+            <li><button><span class="material-symbols-outlined">add_reaction</span>Badge</button></li>
+            <li><button><span class="material-symbols-outlined">tab</span>Tab</button></li>
+            <li><button><span class="material-symbols-outlined">table</span>Table</button></li>
+            <li><button><span class="material-symbols-outlined">table_view</span>Board</button></li>
+            <li><button><span class="material-symbols-outlined">Dialogs</span>Dialog</button></li>
+            <li><button><span class="material-symbols-outlined">view_Carousel</span>Carousel</button></li>
+            <li><button><span class="material-symbols-outlined">insert_Chart</span>Chart</button></li>
+          </ul>
+        </li>
+        <li><button><span class="material-symbols-outlined">list_alt</span>Project Status</button></li>
+      </ul>
+    </nav>
+    <main class="contents">
+      <!-- 본문 -->
+      <h2 class="heading large">Naming Guide</h2>
+      <nav class="tab-type1">
+        <ul>
+          <li><a href="#content1" class="--active">Class Naming</a></li>
+          <li><a href="#content2">Image Naming</a></li>
+          <li><a href="#content3">Label Naming</a></li>
+          <li><a href="#content4">Space Naming</a></li>
+        </ul>
+      </nav>
+      <h2 class="heading regular" id="content1">Class Guide</h2>
+      <h3 class="heading small">BEM</h3>
+      <p>BEM의 class명은 구체적이고 명료하여 HTML안에서도 읽기 쉬워야 하고 의미를 분명하게 전달해야 한다.</p>
+      <h4 class="heading xsmall">Block</h4>
+      재사용이 가능한 콘텐츠 영역을 Block이라 한다. 네임은 한 단어로 사용한다.
+      만약 네이밍이 길어질경우 케밥기법( - )을 이용한다.
+
+      <pre>
+        <code class="html">&lt;div class=&quot;login-wrap&quot;&gt;&lt;/div&gt;</code>
+      </pre>
+
+      <h4 class="heading xsmall">Element</h4>
+
+      element는 블럭안에 특정 기능을 수행하는 컴포넌트를 말한다.
+      element는 상황에 따라 달라지며 두개의 밑줄 __ 로 block다음에 작성한다.
+      <pre>
+        <code class="html">&lt;div class=&quot;login-wrap&quot;&gt;
+  &lt;div class=&quot;login-wrap__header&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code>
+      </pre>
+
+
+      <h4 class="heading xsmall">Modifiers</h4>
+
+      block, element의 외관이나 상태를 변화시킬때 사용한다. 두개의 대쉬 --를 추가하여 표현한다.
+
+      <pre>
+        <code class="html">&lt;div class=&quot;login-wrap&quot;&gt;
+  &lt;div class=&quot;login-wrap__header&quot;&gt;
+    &lt;button class=&quot;**btn-login--active**&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code>
+      </pre>
+
+      <h2 class="heading regular" id="content2">Image Guide</h2>
+      <ul class="list-type1">
+        <li>이미지 네이밍의 조합은 '형태_의미_순서_상태'의 순서로 조합한다.</li>
+        <li>같은 이름의 이미지가 두 개 이상 존재하면 파일 언더스코어(_)로 구분한다.</li>
+        <li>이미지 네이밍은 이미지의 확장자에 관계 없이 순차적으로 적용한다. 예) btn_confirm.gif, btn_confirm2.jpg, btn_confirm3.png</li>
+        <li>임시이미지에 한하여 @특수문자를 처음으로 사용할 수 있다.</li>
+        <li>이미지 예약어에 숫자, 영문소문자, 언더스코어(_)를 조합하여 사용할 수 있다.</li>
+      </ul>
+      <table class="table-type1 txt-center">
+        <caption>이미지 네이밍 정의 예시표</caption>
+        <thead>
+          <tr>
+            <th rowspan="2">분류</th>
+            <th colspan="2">예약어</th>
+            <th rowspan="2">설명</th>
+            <th rowspan="2">권장표현</th>
+          </tr>
+          <tr>
+            <th>형태</th>
+            <th>형태+의미</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="13">아이콘</td>
+            <td rowspan="13">ico_*</td>
+            <td>ico_num*</td>
+            <td>숫자</td>
+            <td rowspan="13">배경</td>
+          </tr>
+          <tr>
+            <td>ico_up</td>
+            <td>상향</td>
+          </tr>
+          <tr>
+            <td>ico_down</td>
+            <td>하향</td>
+          </tr>
+          <tr>
+            <td>ico_new</td>
+            <td>신규</td>
+          </tr>
+          <tr>
+            <td>ico_reply</td>
+            <td>댓글</td>
+          </tr>
+          <tr>
+            <td>ico_update</td>
+            <td>업데이트</td>
+          </tr>
+          <tr>
+            <td>ico_blank</td>
+            <td>새창</td>
+          </tr>
+          <tr>
+            <td>ico_prev</td>
+            <td>이전</td>
+          </tr>
+          <tr>
+            <td>ico_next</td>
+            <td>다음</td>
+          </tr>
+          <tr>
+            <td>ico_arrow_up</td>
+            <td>윗방향 화살표</td>
+          </tr>
+          <tr>
+            <td>ico_arrow_down</td>
+            <td>아랫방향 화살표</td>
+          </tr>
+          <tr>
+            <td>ico_arrow_right</td>
+            <td>오른쪽방향 화살표</td>
+          </tr>
+          <tr>
+            <td>ico_arrow_left</td>
+            <td>왼쪽방향 화살표</td>
+          </tr>
+          <tr>
+            <td rowspan="3">블릿</td>
+            <td rowspan="3">bu_*</td>
+            <td>bu_square</td>
+            <td>사각형</td>
+            <td rowspan="3">배경</td>
+          </tr>
+          <tr>
+            <td>bu_circle</td>
+            <td>원형</td>
+          </tr>
+          <tr>
+            <td>bu_arrow</td>
+            <td>화살표</td>
+          </tr>
+          <tr>
+            <td rowspan="3">배경</td>
+            <td rowspan="3">bg_*</td>
+            <td>bg_header</td>
+            <td>헤더 배경</td>
+            <td rowspan="3">배경</td>
+          </tr>
+          <tr>
+            <td>bg_visual</td>
+            <td>비주얼 배경</td>
+          </tr>
+          <tr>
+            <td>bg_footer</td>
+            <td>푸터 배경</td>
+          </tr>
+          <tr>
+            <td rowspan="3">임시이미지</td>
+            <td rowspan="3">@*</td>
+            <td>@thumb</td>
+            <td>썸네일 임시 이미지</td>
+            <td rowspan="3">전경</td>
+          </tr>
+          <tr>
+            <td>@profile</td>
+            <td>프로필 임시 이미지</td>
+          </tr>
+          <tr>
+            <td>@event</td>
+            <td>이벤트 임시 이미지</td>
+          </tr>
+        </tbody>
+
+      </table>
+      <h2 class="heading regular" id="content3">Label Guide</h2>
+      <h2 class="heading regular" id="content4">Space Guide</h2>
+
+      <div style="height: 100vh;"></div>
+    </main>
+    <footer class="footer">&copy; HA SUNG PIL</footer>
+  </div>
+  <!-- 팝업 -->
+  <dialog class="dialog-service">
+    <div class="dialog-service__header">
+      <h2 class="heading small">Author Apps</h2>
+      <button class="dialog-service__close"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <ul class="dialog-service__list">
+      <li><a href=""><img src="/images/ico_drive.png" alt="">Drive</a></li>
+      <li><a href=""><img src="/images/ico_git.png" alt="">Github</a></li>
+      <li><a href=""><img src="/images/ico_gmail.png" alt="">Gmail</a></li>
+      <li><a href=""><img src="/images/ico_kakao.png" alt="">OpenChat</a></li>
+      <li><a href=""><img src="/images/ico_behance.png" alt="">Behance</a></li>
+      <li><a href=""><img src="/images/ico_lms.png" alt="">LMS</a></li>
+      <li><a href=""><img src="/images/ico_velog.png" alt="">Blog</a></li>
+      <li><a href=""><img src="/images/ico_calendar.png" alt="">Calendar</a></li>
+    </ul>
+  </dialog>
+
+
+</body>
+
+</html>
