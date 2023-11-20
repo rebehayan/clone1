@@ -16,10 +16,18 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
   <link rel="stylesheet" href="/css/main.css">
   <link rel="icon" href="/favicon.svg">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
     integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="module" defer src="/js/global.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+  <script
+    src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
+
+  <script>hljs.highlightAll();</script>
+  <script>hljs.initLineNumbersOnLoad();</script>
 </head>
 
 <body>
@@ -96,132 +104,170 @@
     </nav>
     <main class="contents">
       <!-- 본문 -->
-      <h2 class="heading large">Folder Guide</h2>
-      <table class="table-type1">
-        <caption>
-          <div>파일 및 폴더 네이밍 규칙 예</div>
-        </caption>
-        <colgroup>
-          <col style="width:10%">
-          <col style="width:25%">
-          <col>
-        </colgroup>
+      <h2 class="heading large">CSS Guide</h2>
+      <h3 class="heading regular">기본 규칙</h3>
+      <h4 class="heading small">대소문자</h4>
+      <p>모든 속성은 영문 소문자로만 작성</p>
+      <pre>
+  <code class="css">/* 잘못된 예 */
+.class-name {color:#FFF;}
+
+/* 올바른 예 */
+.class-name {color:#fff;}</code>
+      </pre>
+      <h4 class="heading small">세미콜론(;)</h4>
+      <p>마지막 선언된 속성에도 세미콜론(;)을 사용한다.</p>
+      <pre>
+  <code class="css">/* 잘못된 예 */
+.class-name {margin-left:0; padding-left:10px}
+
+/* 올바른 예 */
+.class-name {margin-left:0; padding-left:10px;}</code>
+      </pre>
+
+      <h4 class="heading small">줄내림</h4>
+      <ul class="list-type1">
+        <li>CSS 속성마다 줄내림 한다.</li>
+        <li>쉼표(,) 선택자는 줄내림 한다.</li>
+        <li>단일 속성은 줄내림하지 않는다.</li>
+      </ul>
+      <pre>
+<code class="css">/* 잘못된 예 */
+h5.class-name { font-size:1.25rem; letter-spacing:-1px; margin:0.5rem 0 0 0; }
+
+/* 올바른 예 */
+.title,
+.box,
+.block {
+  padding:0.5rem;
+}
+
+h5.class-name {
+  font-size:1.25rem;
+  letter-spacing:-1px;
+  margin:0.5rem 0 0 0;
+}
+
+.text-desc { color:#000; }</code>
+      </pre>
+
+      <h4 class="heading small">주석</h4>
+      <ul class="list-type1">
+        <li>CSS 주석 처리는 시작 주석을 작성하며 종료 주석은 작성하지 않는다.</li>
+        <li>종료코드 이후에 오는 요소에 한 칸 띄어 쓰기를 허용한다.</li>
+      </ul>
+      <pre>
+<code class="css">/* 제목 */
+.title-type1 {margin:3rem;}
+
+/* 상세설명 */
+.desc1 {
+  padding:0.2rem 0 0 1.5rem;
+  font-size:1rem;
+}</code>
+      </pre>
+
+      <h4 class="heading small">빈줄</h4>
+      <ul class="list-type1">
+        <li>객체를 구분하기 위하여 코드 그룹 간 1줄의 빈 줄을 허용한다.</li>
+        <li>빈 줄의 1줄을 초과하지 않는다.</li>
+      </ul>
+      <pre>
+<code class="css">/* 잘못된 예 */
+.title-type1 {margin:3rem;}
+.desc1 {
+  padding:0.2rem 0 0 1.5rem;
+  font-size:1rem;
+}
+
+/* 올바른 예 */
+.title-type1 {margin:3rem;}
+
+.desc1 {
+  padding:0.2rem 0 0 1.5rem;
+  font-size:1rem;
+}</code>
+      </pre>
+      <h3 class="heading regular">선택자</h3>
+      <h4 class="heading small">공통 선택자</h4>
+      <p>'*' 공통 선택자는 웹 페이지의 성능을 저하를 가져오기 때문에 사용하지 않는다.</p>
+      <pre>
+  <code class="css">/* 잘못된 예 */
+* {margin:0; padding:0;}</code>
+      </pre>
+      <h4 class="heading small">id와 class</h4>
+      <ul class="list-type1">
+        <li>id와 class를 조합하여 사용하지 않는다.</li>
+        <li>id를 css로 표현하기 위하여 선택자로 사용하지 않는다.</li>
+        <li>id는 label 또는 본문바로가기 등 내부링크에만 사용한다.</li>
+      </ul>
+      <pre>
+<code class="css">/* 잘못된 예 */
+#header .lnb {margin:0; padding:0;}
+#lnb {position:relative;}
+
+/* 올바른 예 */
+.lnb {position:relative;}
+.lnb a {display:block;}</code>
+      </pre>
+
+      <h4 class="heading small">속성의 선언 순서</h4>
+      <pre>
+<code class="css">.selector{
+  overflow : visible, hidden, auto;
+  display : block, inline-block, flex, grid;
+  position : absolute, fixed, sticky / left, right, top, bottom, z-index;
+  width : min-width, max-width, clamp;
+  height : min-height, max-height, clamp;
+  margin
+  padding
+  border
+  background
+  font : color, line-height, font-weight, letter-spacing, font-size;
+  etc : animation, transition, transform;
+}</code>
+      </pre>
+
+      <h4 class="heading small">속성의 축약/약식 속성 사용</h4>
+      <p>CSS 최적화를 위해 속성값을 축약 한다.</p>
+      <table class="table-type1 txt-center">
+        <caption>축약 표현 예시</caption>
         <thead>
           <tr>
-            <th>분류</th>
-            <th>예제</th>
+            <th>축약 전</th>
+            <th>축약 후</th>
             <th>설명</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td rowspan="6">Folder</td>
-            <td>root</td>
-            <td>작업 현황 / 가이드 / index 파일</td>
+            <td>#ffffff</td>
+            <td>#fff</td>
+            <td>6번 연속된 숫자나 문자는 3글자로 축약한다.</td>
           </tr>
           <tr>
-            <td>pages</td>
-            <td>index파일 포함 업무별 폴더 생성가능.</td>
+            <td>top:0px</td>
+            <td>top:0</td>
+            <td>속성의 값이 0일 경우 단위를 표시하지 않는다.</td>
           </tr>
           <tr>
-            <td>js</td>
-            <td>목적별 폴더 생성 가능</td>
-          </tr>
-          <tr>
-            <td>css</td>
-            <td>디렉토리별 파일 생성 가능</td>
-          </tr>
-          <tr>
-            <td>scss</td>
-            <td>목적에 따라 디렉토리 생성</td>
-          </tr>
-          <tr>
-            <td>images</td>
-            <td>네이밍별 폴더 생성 가능</td>
-          </tr>
-          <tr>
-            <td rowspan="3">HTML</td>
-            <td>pageid.html</td>
-            <td>화면 코드 사용</td>
-          </tr>
-          <tr>
-            <td>pageid_p.html</td>
-            <td>팝업 파일 사용 ( 파일명 + p )</td>
-          </tr>
-          <tr>
-            <td>pageid_t.html</td>
-            <td>탭메뉴 파일 사용 ( 파일명 + t )</td>
-          </tr>
-          <tr>
-            <td rowspan="3">CSS</td>
-            <td>pagename.css</td>
-            <td>1뎁스명을 사용</td>
-          </tr>
-          <tr>
-            <td>reset.css</td>
-            <td>브라우저 호환성을 위하여 기본 css 속성을 정의한다.</td>
-          </tr>
-          <tr>
-            <td>style.css</td>
-            <td>전역에 쓰이는 컴퍼넌트와 레이아웃을 정의한다. </td>
-          </tr>
-          <tr>
-            <td rowspan="5">SCSS</td>
-            <td>abstracts</td>
-            <td>CSS에 영향에 없는 추상적 파일 정의</td>
-          </tr>
-          <tr>
-            <td>base</td>
-            <td>기본정의</td>
-          </tr>
-          <tr>
-            <td>components</td>
-            <td>컴퍼넌트 정의</td>
-          </tr>
-          <tr>
-            <td>layout</td>
-            <td>레이아웃 정의</td>
-          </tr>
-          <tr>
-            <td>page</td>
-            <td>페이지 정의</td>
-          </tr>
-          <tr>
-            <td rowspan="3">JS</td>
-            <td>global.js</td>
-            <td>전역에 사용하는 자바스크립트를 작성한다.</td>
-          </tr>
-          <tr>
-            <td>setting/settingname.js</td>
-            <td>설정에 따라 작성한다.</td>
-          </tr>
-          <tr>
-            <td>ul/uiname.js</td>
-            <td>ui 기능에 따라 작성한다.</td>
-          </tr>
-          <tr>
-            <td rowspan="5">Image</td>
-            <td>ico_name.file</td>
-            <td>아이콘 이미지 정의</td>
-          </tr>
-          <tr>
-            <td>bu_name.file</td>
-            <td>블릿 이미지 정의</td>
-          </tr>
-          <tr>
-            <td>bg_name.file</td>
-            <td>배경목적으로 사용되는 이미지 정의</td>
-          </tr>
-          <tr>
-            <td>img_name.file</td>
-            <td>전경목적으로 사용되는 이미지 정의</td>
-          </tr>
-          <tr>
-            <td>@name.file</td>
-            <td>임시이미지 정의</td>
+            <td>margin:15px 15px 15px 15px</td>
+            <td>margin:15px</td>
+            <td>속성의 값이 동일한 경우 축약한다.</td>
           </tr>
         </tbody>
       </table>
+
+      <h4 class="heading small">rem 사용</h4>
+      <ul class="list-type1">
+        <li>다양한 디바이스에 대응하기 위해 rem단위를 사용한다.</li>
+        <li>root font-size는 62.5%(10px)로 기준으로 한다. </li>
+      </ul>
+      <pre>
+<code class="css">html {font-size:62.5%;}
+body {font-size:1rem;}</code>
+      </pre>
+
     </main>
     <footer class="footer">&copy; FE Design System by HA SUNG PIL</footer>
   </div>

@@ -7,6 +7,7 @@
   --blue: #1765fd;
   --green: #4fcb8d;
   --purple: #5c31d6;
+  --red: #fe5957;
   --gray29: #292d32;
   --gray67: #67748e;
   --grayca: #cad6fe;
@@ -40,6 +41,7 @@ h6 {
 }
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 body {
   background: var(--grayf8);
@@ -196,6 +198,22 @@ body.--fixed {
   transition: 0.4s;
   > ul {
     padding-left: 2rem;
+    position: fixed;
+    width: 30rem;
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    &::-webkit-scrollbar {
+      width: 0.4rem;
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 0.5rem;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
   }
   & button {
     display: flex;
@@ -289,6 +307,18 @@ body.--fixed {
   padding: 0 3rem;
   font-size: 1.6rem;
   line-height: 130%;
+  .--fixed & {
+    position: relative;
+    &::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 30rem;
+      right: 0;
+      height: 25rem;
+      background: linear-gradient(to bottom, var(--white) 70%, rgba(255, 255, 255, 0));
+    }
+  }
 }
 .footer {
   background: var(--grayeb);
@@ -463,6 +493,7 @@ body.--fixed {
     padding: 1rem 0 0.5rem;
     font-size: 1.8rem;
     color: var(--gray67);
+    font-weight: 500;
   }
 }
 
@@ -562,6 +593,7 @@ body.--fixed {
 
 /* 표 */
 .table-type1 {
+  margin: 2rem 0 4rem;
   & th,
   & td {
     border: 1px solid #dee2e6;
@@ -570,6 +602,7 @@ body.--fixed {
     padding: 0.8rem;
     vertical-align: middle;
   }
+  & tbody th,
   & thead {
     font-weight: 700;
     background-color: var(--grayf8);
@@ -580,8 +613,9 @@ body.--fixed {
 .tab-type1 {
   position: sticky;
   top: 15rem;
+  margin-bottom: 4rem;
   padding: 0.5rem;
-  box-shadow: 0px 0.2rem 1.5rem var(--grayeb);
+  box-shadow: 0 0 2rem 0.3rem rgba(0, 0, 0, 0.05);
   border-radius: 0.6rem;
   background-color: var(--white);
   & ul {
@@ -598,6 +632,7 @@ body.--fixed {
     font-size: 1.5rem;
     color: var(--gray29);
     border-radius: 0.6rem;
+    transition: 0.4s;
   }
   .--active {
     background-color: var(--blue);
@@ -639,9 +674,19 @@ body.--fixed {
   width: 2.5rem;
 }
 .hljs-ln td.hljs-ln-code {
-  padding: 2px;
+  padding: 0.2rem 0.5rem;
+}
+.txt-code {
+  display: inline-block;
+  background-color: var(--grayeb);
+  font-weight: 500;
+  color: var(--purple);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.8em;
 }
 
+/* 정렬 */
 .txt-center {
   text-align: center;
 }

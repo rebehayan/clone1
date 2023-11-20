@@ -74,8 +74,9 @@
                 Guide</button></li>
             <li><button role="link" data-href="naming"><i class="material-symbols-outlined">fingerprint</i>Naming
                 Guide</button></li>
-            <li><button><span class="material-symbols-outlined">html</span>HTML Guide</button></li>
-            <li><button><span class="material-symbols-outlined">css</span>CSS Guide</button></li>
+            <li><button role="link" data-href="html"><i class="material-symbols-outlined">html</i>HTML Guide</button>
+            </li>
+            <li><button role="link" data-href="css"><i class="material-symbols-outlined">css</i>CSS Guide</button></li>
             <li><button><span class="material-symbols-outlined">style</span>Sass Guide</button></li>
             <li><button><span class="material-symbols-outlined">javascript</span>Javascript Guide</button></li>
             <li><button><span class="material-symbols-outlined">code_blocks</span>React Guide</button></li>
@@ -272,14 +273,53 @@
             <td>이벤트 임시 이미지</td>
           </tr>
         </tbody>
-
       </table>
       <h2 class="heading regular" id="content3">Label Guide</h2>
-      <h2 class="heading regular" id="content4">Space Guide</h2>
+      <h3 class="heading small">Checkbox Label Naming</h3>
+      <p>체크박스는 <strong class="txt-code">chk + 영역숫자 + 영역의갯수</strong> 숫자 순서로 기입한다.</p>
+      <pre>
+              <code class="html">&lt;input type=&quot;checkbox&quot; id=&quot;chk1_1&quot; /&gt;&lt;label for=&quot;chk1_1&quot;&gt;&#xC804;&#xCCB4;&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;chk1_2&quot; /&gt;&lt;label for=&quot;chk1_2&quot;&gt;&#xB9AC;&#xBAA8;&#xB378;&#xB9C1;&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;chk1_3&quot; /&gt;&lt;label for=&quot;chk1_3&quot;&gt;&#xBD80;&#xC5CC;&lt;/label&gt;</code>
+</pre>
+      <pre><code class="html">&lt;input type=&quot;checkbox&quot; id=&quot;chk2_1&quot; /&gt;&lt;label for=&quot;chk2_1&quot;&gt;선택1&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;chk2_2&quot; /&gt;&lt;label for=&quot;chk2_2&quot;&gt;선택2&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; id=&quot;chk2_3&quot; /&gt;&lt;label for=&quot;chk2_3&quot;&gt;선택3&lt;/label&gt;</code>
+</pre>
 
-      <div style="height: 100vh;"></div>
+      <h3 class="heading small">Radio Label Naming</h3>
+      <p>라디오버튼은 <strong class="txt-code">ra + 영역숫자 + 영역의갯수</strong> 숫자 순서로 기입한다.</p>
+      <pre>
+        <code class="html">&lt;input type=&quot;radio&quot; name=&quot;rag1&quot; id=&quot;ra1_1&quot; /&gt;&lt;label for=&quot;ra1_1&quot;&gt;&#xC120;&#xD0DD;1&lt;/label&gt;
+&lt;input type=&quot;radio&quot; name=&quot;rag1&quot; id=&quot;ra1_2&quot; /&gt;&lt;label for=&quot;ra1_2&quot;&gt;&#xC120;&#xD0DD;2&lt;/label&gt;</code>
+</pre>
+      <pre><code class="html">&lt;input type=&quot;radio&quot; name=&quot;rag2&quot; id=&quot;ra2_1&quot; /&gt;&lt;label for=&quot;ra2_1&quot;&gt;&#xC120;&#xD0DD;1&lt;/label&gt;
+&lt;input type=&quot;radio&quot; name=&quot;rag2&quot; id=&quot;ra2_2&quot; /&gt;&lt;label for=&quot;ra2_2&quot;&gt;&#xC120;&#xD0DD;1&lt;/label&gt;</code>
+</pre>
+
+      <h3 class="heading small">Input Label Naming</h3>
+      <p>input, textarea등 입력서식은 <strong class="txt-code">txt + 영역갯수 + 영역안의갯수</strong> 숫자 순서로 기입한다.</p>
+      <pre>
+        <code class="html">&lt;label for=&quot;txt1_1&quot;&gt;&#xC124;&#xBA85;&lt;/label&gt;&lt;input type=&quot;text&quot; id=&quot;txt1_1&quot;&gt;
+&lt;label for=&quot;txt1_2&quot;&gt;&#xC124;&#xBA85;&lt;/label&gt;&lt;input type=&quot;text&quot; id=&quot;txt1_2&quot;&gt;</code>
+        </pre>
+      <pre><code class="html">&lt;label for=&quot;txt2_1&quot;&gt;&#xC124;&#xBA85;&lt;/label&gt;&lt;input type=&quot;text&quot; id=&quot;txt2_1&quot;&gt;
+&lt;label for=&quot;txt2_2&quot;&gt;&#xC124;&#xBA85;&lt;/label&gt;&lt;input type=&quot;text&quot; id=&quot;txt2_2&quot;&gt;</code>
+</pre>
+
+      <h2 class="heading regular" id="content4">Space Guide</h2>
+      <ul class="list-type1">
+        <li>컴퍼넌트와 컴퍼넌트 사이의 공간이 필요할 때만 여백 클래스를 사용한다.</li>
+        <li>여백은 한 방향으로만 제공해야 한다.</li>
+        <li>여백의 크기는 디자이너와 협의후 정의한다.</li>
+      </ul>
+      <pre>
+<code class="html">&lt;div class=&quot;mt10&quot;&gt;특정 컴퍼넌트&lt;/div&gt;
+&lt;div class=&quot;mt50&quot;&gt;특정 컴퍼넌트&lt;/div&gt;</code>
+</pre>
+
     </main>
-    <footer class="footer">&copy; HA SUNG PIL</footer>
+    <footer class="footer">&copy; FE Design System by HA SUNG PIL</footer>
   </div>
   <!-- 팝업 -->
   <dialog class="dialog-service">
