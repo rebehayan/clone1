@@ -13,10 +13,26 @@
   <meta property="og:url" content="./url">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="icon" href="/favicon.svg">
+
+  <!-- lodash -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- highlight -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
+
+  <!-- scroll magic -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+
+  <!-- ui -->
   <script type="module" defer src="/js/global.js"></script>
+
+  <script>hljs.highlightAll();</script>
+  <script>hljs.initLineNumbersOnLoad();</script>
 </head>
 
 <body>
@@ -94,132 +110,51 @@
     </nav>
     <main class="contents">
       <!-- 본문 -->
-      <h2 class="heading large">Folder Guide</h2>
-      <table class="table-type1">
-        <caption>
-          <div>파일 및 폴더 네이밍 규칙 예</div>
-        </caption>
-        <colgroup>
-          <col style="width:10%">
-          <col style="width:25%">
-          <col>
-        </colgroup>
-        <thead>
-          <tr>
-            <th>분류</th>
-            <th>예제</th>
-            <th>설명</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td rowspan="6">Folder</td>
-            <td>root</td>
-            <td>작업 현황 / 가이드 / index 파일</td>
-          </tr>
-          <tr>
-            <td>pages</td>
-            <td>index파일 포함 업무별 폴더 생성가능.</td>
-          </tr>
-          <tr>
-            <td>js</td>
-            <td>목적별 폴더 생성 가능</td>
-          </tr>
-          <tr>
-            <td>css</td>
-            <td>디렉토리별 파일 생성 가능</td>
-          </tr>
-          <tr>
-            <td>scss</td>
-            <td>목적에 따라 디렉토리 생성</td>
-          </tr>
-          <tr>
-            <td>images</td>
-            <td>네이밍별 폴더 생성 가능</td>
-          </tr>
-          <tr>
-            <td rowspan="3">HTML</td>
-            <td>pageid.html</td>
-            <td>화면 코드 사용</td>
-          </tr>
-          <tr>
-            <td>pageid_p.html</td>
-            <td>팝업 파일 사용 ( 파일명 + p )</td>
-          </tr>
-          <tr>
-            <td>pageid_t.html</td>
-            <td>탭메뉴 파일 사용 ( 파일명 + t )</td>
-          </tr>
-          <tr>
-            <td rowspan="3">CSS</td>
-            <td>pagename.css</td>
-            <td>1뎁스명을 사용</td>
-          </tr>
-          <tr>
-            <td>reset.css</td>
-            <td>브라우저 호환성을 위하여 기본 css 속성을 정의한다.</td>
-          </tr>
-          <tr>
-            <td>style.css</td>
-            <td>전역에 쓰이는 컴퍼넌트와 레이아웃을 정의한다. </td>
-          </tr>
-          <tr>
-            <td rowspan="5">SCSS</td>
-            <td>abstracts</td>
-            <td>CSS에 영향에 없는 추상적 파일 정의</td>
-          </tr>
-          <tr>
-            <td>base</td>
-            <td>기본정의</td>
-          </tr>
-          <tr>
-            <td>components</td>
-            <td>컴퍼넌트 정의</td>
-          </tr>
-          <tr>
-            <td>layout</td>
-            <td>레이아웃 정의</td>
-          </tr>
-          <tr>
-            <td>page</td>
-            <td>페이지 정의</td>
-          </tr>
-          <tr>
-            <td rowspan="3">JS</td>
-            <td>global.js</td>
-            <td>전역에 사용하는 자바스크립트를 작성한다.</td>
-          </tr>
-          <tr>
-            <td>setting/settingname.js</td>
-            <td>설정에 따라 작성한다.</td>
-          </tr>
-          <tr>
-            <td>ul/uiname.js</td>
-            <td>ui 기능에 따라 작성한다.</td>
-          </tr>
-          <tr>
-            <td rowspan="5">Image</td>
-            <td>ico_name.file</td>
-            <td>아이콘 이미지 정의</td>
-          </tr>
-          <tr>
-            <td>bu_name.file</td>
-            <td>블릿 이미지 정의</td>
-          </tr>
-          <tr>
-            <td>bg_name.file</td>
-            <td>배경목적으로 사용되는 이미지 정의</td>
-          </tr>
-          <tr>
-            <td>img_name.file</td>
-            <td>전경목적으로 사용되는 이미지 정의</td>
-          </tr>
-          <tr>
-            <td>@name.file</td>
-            <td>임시이미지 정의</td>
-          </tr>
-        </tbody>
-      </table>
+      <h2 class="heading large">Typograph Guide</h2>
+      <h3 class="heading regular">Heading</h3>
+      <p>헤딩의 깊이와 상관없이 제목의 형태로 제어한다.</p>
+      <div class="guide-block">
+        <h2 class="heading large">large</h2>
+        <h2 class="heading regular">regular</h2>
+        <h2 class="heading small">small</h2>
+        <h2 class="heading xsmall">xsmall</h2>
+      </div>
+      <pre>
+<code class="css">&lt;h2 class=&quot;heading large&quot;&gt;large&lt;/h2&gt;
+&lt;h2 class=&quot;heading regular&quot;&gt;regular&lt;/h2&gt;
+&lt;h2 class=&quot;heading small&quot;&gt;small&lt;/h2&gt;
+&lt;h2 class=&quot;heading xsmall&quot;&gt;xsmall&lt;/h2&gt;
+</code>
+      </pre>
+      <h3 class="heading regular">Text</h3>
+      <p>디자이너가 제공하는 텍스트 가이드에 따라 정의한다.</p>
+      <div class="guide-block">
+        <ul class="list-type1">
+          <li>list-type1 리스트 가이드</li>
+          <li>list-type1 리스트 가이드</li>
+          <li>list-type1 리스트 가이드</li>
+        </ul>
+      </div>
+      <pre>
+<code class="css">&lt;ul class=&quot;list-type1&quot;&gt;
+  &lt;li&gt;list-type1 &#47532;&#49828;&#53944; &#44032;&#51060;&#46300;&lt;/li&gt;
+  &lt;li&gt;list-type1 &#47532;&#49828;&#53944; &#44032;&#51060;&#46300;&lt;/li&gt;
+  &lt;li&gt;list-type1 &#47532;&#49828;&#53944; &#44032;&#51060;&#46300;&lt;/li&gt;
+&lt;/ul&gt;
+</code>
+      </pre>
+      <h3 class="heading regular">Text Color</h3>
+      <p>단일 색상 표현할때에는 사용한다.</p>
+      <div class="guide-block">
+        <p class="txt-red">txt-red</p>
+        <p class="txt-blue">txt-blue</p>
+        <p class="txt-purple">txt-purple</p>
+      </div>
+      <pre>
+<code class="css">&lt;p class=&quot;txt-red&quot;&gt;txt-red&lt;/p&gt;
+&lt;p class=&quot;txt-blue&quot;&gt;txt-blue&lt;/p&gt;
+&lt;p class=&quot;txt-purple&quot;&gt;txt-purple&lt;/p&gt;</code>
+      </pre>
     </main>
     <footer class="footer"><span class="txt-year"></span> &copy; FE Design System by HA SUNG PIL</footer>
   </div>

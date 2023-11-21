@@ -10,12 +10,14 @@ export function InnerTab(option = {}) {
     scrollMagicTab();
   }
 
+  // 이벤트 바인드
   function bindEvent() {
     $button.forEach(function (el) {
       el.addEventListener("click", currentTab);
     });
   }
 
+  // 현재탭 활성화
   function currentTab(event) {
     let isTab = event.currentTarget;
 
@@ -23,6 +25,7 @@ export function InnerTab(option = {}) {
     isTab.classList.add(config.activeClass);
   }
 
+  // 클래스 삭제
   function removeClass() {
     $button.forEach(function (el) {
       el.classList.remove(config.activeClass);
