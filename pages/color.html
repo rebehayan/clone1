@@ -64,10 +64,8 @@
         <li>
           <button><span class="material-symbols-outlined">code</span>Coding Convention</button>
           <ul class="depth2">
-            <li><button role="link" data-href="folder"><i class="material-symbols-outlined">create_new_folder</i>Folder
-                Guide</button></li>
-            <li><button role="link" data-href="naming"><i class="material-symbols-outlined">fingerprint</i>Naming
-                Guide</button></li>
+            <li><button role="link" data-href="folder"><i class="material-symbols-outlined">create_new_folder</i>Folder Guide</button></li>
+            <li><button role="link" data-href="naming"><i class="material-symbols-outlined">fingerprint</i>Naming Guide</button></li>
             <li><button role="link" data-href="html"><i class="material-symbols-outlined">html</i>HTML Guide</button>
             </li>
             <li><button role="link" data-href="css"><i class="material-symbols-outlined">css</i>CSS Guide</button></li>
@@ -81,8 +79,7 @@
         <li>
           <button><span class="material-symbols-outlined">package_2</span>Component Guide</button>
           <ul class="depth2">
-            <li><button role="link" data-href="color"><i class="material-symbols-outlined">colorize</i>Color</button>
-            </li>
+            <li><button role="link" data-href="color"><i class="material-symbols-outlined">colorize</i>Color</button></li>
             <li><button><span class="material-symbols-outlined">text_fields</span>Typograph</button></li>
             <li><button role="link" data-href="align"><i class="material-symbols-outlined">align_horizontal_left</i>Align</button></li>
             <li><button><span class="material-symbols-outlined">responsive_layout</span>Layout</button></li>
@@ -101,169 +98,43 @@
     </nav>
     <main class="contents">
       <!-- 본문 -->
-      <h2 class="heading large">CSS Guide</h2>
-      <h3 class="heading regular">기본 규칙</h3>
-      <h4 class="heading small">대소문자</h4>
-      <p>모든 속성은 영문 소문자로만 작성</p>
-      <pre>
-  <code class="css">/* 잘못된 예 */
-.class-name {color:#FFF;}
-
-/* 올바른 예 */
-.class-name {color:#fff;}</code>
-      </pre>
-      <h4 class="heading small">세미콜론(;)</h4>
-      <p>마지막 선언된 속성에도 세미콜론(;)을 사용한다.</p>
-      <pre>
-  <code class="css">/* 잘못된 예 */
-.class-name {margin-left:0; padding-left:10px}
-
-/* 올바른 예 */
-.class-name {margin-left:0; padding-left:10px;}</code>
-      </pre>
-
-      <h4 class="heading small">줄내림</h4>
+      <h2 class="heading large">Color Guide</h2>
       <ul class="list-type1">
-        <li>CSS 속성마다 줄내림 한다.</li>
-        <li>쉼표(,) 선택자는 줄내림 한다.</li>
-        <li>단일 속성은 줄내림하지 않는다.</li>
+        <li>색상은 반드시 변수로 지정하여 사용한다.</li>
+        <li>디자인 시스템 정의가 되어 있지 않을 경우 다음과 같은 색상명으로 정의한다.</li>
       </ul>
+      <h3 class="heading xsmall">CSS</h3>
       <pre>
-<code class="css">/* 잘못된 예 */
-h5.class-name { font-size:1.25rem; letter-spacing:-1px; margin:0.5rem 0 0 0; }
+<code class="css">  --white : #fff;
+  --black : #000;
+  --black02 : rgba(0,0,0,0.2);
+  --blue : #00f;
+  --gray22 : #222;
+  --grayeb : #ebebeb;
+  --grayf1 : #f1f1f1;
+</code>
+</pre>
+      <h3 class="heading xsmall">Sass(SCSS)</h3>
+      <pre>
+<code class="scss">  $white : #fff;
+  $black : #000;
+  $black02 : rgba($black, 0.2);
+  $blue : #00f;
+  $gray22 : #222;
+  $grayeb : #ebebeb;
+  $grayf1 : #f1f1f1;
+</code>
+</pre>
 
-/* 올바른 예 */
-.title,
-.box,
-.block {
-  padding:0.5rem;
-}
-
-h5.class-name {
-  font-size:1.25rem;
-  letter-spacing:-1px;
-  margin:0.5rem 0 0 0;
-}
-
-.text-desc { color:#000; }</code>
-      </pre>
-
-      <h4 class="heading small">주석</h4>
-      <ul class="list-type1">
-        <li>CSS 주석 처리는 시작 주석을 작성하며 종료 주석은 작성하지 않는다.</li>
-        <li>종료코드 이후에 오는 요소에 한 칸 띄어 쓰기를 허용한다.</li>
+      <ul class="color-block">
+        <li>white</li>
+        <li>black</li>
+        <li>black02</li>
+        <li>blue</li>
+        <li>gray22</li>
+        <li>grayeb</li>
+        <li>grayf1</li>
       </ul>
-      <pre>
-<code class="css">/* 제목 */
-.title-type1 {margin:3rem;}
-
-/* 상세설명 */
-.desc1 {
-  padding:0.2rem 0 0 1.5rem;
-  font-size:1rem;
-}</code>
-      </pre>
-
-      <h4 class="heading small">빈줄</h4>
-      <ul class="list-type1">
-        <li>객체를 구분하기 위하여 코드 그룹 간 1줄의 빈 줄을 허용한다.</li>
-        <li>빈 줄의 1줄을 초과하지 않는다.</li>
-      </ul>
-      <pre>
-<code class="css">/* 잘못된 예 */
-.title-type1 {margin:3rem;}
-.desc1 {
-  padding:0.2rem 0 0 1.5rem;
-  font-size:1rem;
-}
-
-/* 올바른 예 */
-.title-type1 {margin:3rem;}
-
-.desc1 {
-  padding:0.2rem 0 0 1.5rem;
-  font-size:1rem;
-}</code>
-      </pre>
-      <h3 class="heading regular">선택자</h3>
-      <h4 class="heading small">공통 선택자</h4>
-      <p>'*' 공통 선택자는 웹 페이지의 성능을 저하를 가져오기 때문에 사용하지 않는다.</p>
-      <pre>
-  <code class="css">/* 잘못된 예 */
-* {margin:0; padding:0;}</code>
-      </pre>
-      <h4 class="heading small">id와 class</h4>
-      <ul class="list-type1">
-        <li>id와 class를 조합하여 사용하지 않는다.</li>
-        <li>id를 css로 표현하기 위하여 선택자로 사용하지 않는다.</li>
-        <li>id는 label 또는 본문바로가기 등 내부링크에만 사용한다.</li>
-      </ul>
-      <pre>
-<code class="css">/* 잘못된 예 */
-#header .lnb {margin:0; padding:0;}
-#lnb {position:relative;}
-
-/* 올바른 예 */
-.lnb {position:relative;}
-.lnb a {display:block;}</code>
-      </pre>
-
-      <h4 class="heading small">속성의 선언 순서</h4>
-      <pre>
-<code class="css">.selector{
-  overflow : visible, hidden, auto;
-  display : block, inline-block, flex, grid;
-  position : absolute, fixed, sticky / left, right, top, bottom, z-index;
-  width : min-width, max-width, clamp;
-  height : min-height, max-height, clamp;
-  margin
-  padding
-  border
-  background
-  font : color, line-height, font-weight, letter-spacing, font-size;
-  etc : animation, transition, transform;
-}</code>
-      </pre>
-
-      <h4 class="heading small">속성의 축약/약식 속성 사용</h4>
-      <p>CSS 최적화를 위해 속성값을 축약 한다.</p>
-      <table class="table-type1 txt-center">
-        <caption>축약 표현 예시</caption>
-        <thead>
-          <tr>
-            <th>축약 전</th>
-            <th>축약 후</th>
-            <th>설명</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>#ffffff</td>
-            <td>#fff</td>
-            <td>6번 연속된 숫자나 문자는 3글자로 축약한다.</td>
-          </tr>
-          <tr>
-            <td>top:0px</td>
-            <td>top:0</td>
-            <td>속성의 값이 0일 경우 단위를 표시하지 않는다.</td>
-          </tr>
-          <tr>
-            <td>margin:15px 15px 15px 15px</td>
-            <td>margin:15px</td>
-            <td>속성의 값이 동일한 경우 축약한다.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h4 class="heading small">rem 사용</h4>
-      <ul class="list-type1">
-        <li>다양한 디바이스에 대응하기 위해 rem단위를 사용한다.</li>
-        <li>root font-size는 62.5%(10px)로 기준으로 한다. </li>
-      </ul>
-      <pre>
-<code class="css">html {font-size:62.5%;}
-body {font-size:1rem;}</code>
-      </pre>
 
     </main>
     <footer class="footer"><span class="txt-year"></span> &copy; FE Design System by HA SUNG PIL</footer>
@@ -285,7 +156,6 @@ body {font-size:1rem;}</code>
       <li><a href=""><img src="/images/ico_calendar.png" alt="">Calendar</a></li>
     </ul>
   </dialog>
-
 
 </body>
 

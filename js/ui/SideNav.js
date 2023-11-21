@@ -33,6 +33,7 @@ export function SideNav(option = {}) {
     $Current.classList.add(config.activeClass);
 
     if ($ul) {
+      slideToggle($ul);
       $ul.classList.add(config.activeClass);
       $ul.previousElementSibling.classList.add("open");
     }
@@ -41,11 +42,18 @@ export function SideNav(option = {}) {
   function removeClass() {
     $Depth2.forEach(function (el) {
       el.classList.remove(config.activeClass);
+      el.style.cssText = "";
     });
     $btnDepth1.forEach(function (el) {
       el.classList.remove(config.activeClass);
       el.classList.remove("open");
     });
+  }
+
+  // depth2 ul 높이계산
+  function slideToggle(depth2) {
+    let isheight = depth2.children.length * 43; // 43 = 개별높이
+    depth2.style.cssText = `height:${isheight - 14}px`;
   }
 
   // 현재위치
@@ -60,14 +68,17 @@ export function SideNav(option = {}) {
       let text = el.getAttribute("data-href");
 
       if (isURL.match(text)) {
+        const $ul = el.parentElement.parentElement;
+
+        slideToggle($ul);
         el.classList.add("--current");
-        el.parentElement.parentElement.classList.add("--active");
-        el.parentElement.parentElement.previousElementSibling.classList.add("--active", "open");
+        el.parentElement.parentElement.classList.add(config.activeClass);
+        el.parentElement.parentElement.previousElementSibling.classList.add(config.activeClass, "open");
       }
     });
   }
 
-  // 페이지 링크
+  // 페이지 이동
   function gotoPage(event) {
     let currentButton = event.currentTarget;
     let currentAttr = currentButton.getAttribute("data-href");

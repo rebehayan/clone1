@@ -90,6 +90,8 @@ body.--fixed {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 100;
   padding: 3rem 2rem;
   margin: 1.2rem;
   border-radius: 3rem;
@@ -255,15 +257,22 @@ body.--fixed {
     margin-left: -30rem;
   }
   & li > ul {
-    display: none;
+    /* display: none; */
     &.--active {
-      display: block;
+      /* display: block; */
+      padding: 1rem 2rem 2rem 4rem;
     }
   }
   .depth2 {
-    padding: 1rem 2rem 2rem 4rem;
+    padding: 0 2rem 0 4rem;
+    height: 0;
+    transition: height 0.3s, padding 0.3s;
+    overflow: hidden;
     & span {
       display: none;
+    }
+    & i {
+      font-size: 1.6rem;
     }
     & button {
       font-size: 1.2rem;
@@ -308,16 +317,20 @@ body.--fixed {
   padding: 0 3rem;
   font-size: 1.6rem;
   line-height: 130%;
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 30rem;
+    right: 0;
+    z-index: 10;
+    height: 0;
+    background: linear-gradient(to bottom, var(--white) 70%, rgba(255, 255, 255, 0));
+    transition: height 0.4s;
+  }
   .--fixed & {
-    position: relative;
     &::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 30rem;
-      right: 0;
       height: 25rem;
-      background: linear-gradient(to bottom, var(--white) 70%, rgba(255, 255, 255, 0));
     }
   }
 }
@@ -339,6 +352,7 @@ body.--fixed {
   left: inherit;
   right: 4rem;
   top: 4rem;
+  z-index: 1500;
   margin: 0;
   padding: 0;
   width: 35rem;
@@ -399,6 +413,7 @@ body.--fixed {
 
 /* 비주얼 */
 .index-visual {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -726,4 +741,55 @@ body.--fixed {
   padding: 1rem;
   min-height: 5rem;
   border-radius: 0.8rem;
+}
+
+.color-block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+  & li {
+    text-align: center;
+    &::before {
+      content: "";
+      display: block;
+      margin: 0 auto 0.5rem;
+      width: 10rem;
+      height: 10rem;
+      border: 1px solid var(--gray29);
+    }
+    &:nth-child(1)::before {
+      background-color: #fff;
+    }
+    &:nth-child(2)::before {
+      background-color: #000;
+    }
+    &:nth-child(3)::before {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    &:nth-child(4)::before {
+      background-color: blue;
+    }
+    &:nth-child(5)::before {
+      background-color: #222;
+    }
+    &:nth-child(6)::before {
+      background-color: #ebebeb;
+    }
+    &:nth-child(7)::before {
+      background-color: #f1f1f1;
+    }
+  }
+}
+
+#player {
+  position: absolute;
+  right: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background-color: #4fcb8d;
+  z-index: 1500;
 }

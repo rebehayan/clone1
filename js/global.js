@@ -6,6 +6,7 @@ import { ScrollHeader } from "./ui/ScrollHeader.js";
 import { SideNav } from "./ui/SideNav.js";
 import { Fullscreen } from "./ui/Fullscreen.js";
 import { InnerTab } from "./ui/InnerTab.js";
+import { Year } from "./ui/Year.js";
 
 // 사이드메뉴제어
 //방법1
@@ -24,3 +25,4 @@ ScrollHeader(); // 헤더고정
 SideNav(); // 사이드메뉴
 Fullscreen(); //전체창
 InnerTab(); // 내부링크탭
+Year(); // 푸터 년도
