@@ -33,15 +33,13 @@ export function InnerTab(option = {}) {
     });
   }
   function scrollMagicTab() {
-    $tab.forEach(function (el) {
-      if (el.length) {
-        var controller = new ScrollMagic.Controller({ globalSceneOptions: { duration: 1000 } });
-        new ScrollMagic.Scene({ triggerElement: "#content1" }).setClassToggle("#tab1-1", "--active").addTo(controller);
-        new ScrollMagic.Scene({ triggerElement: "#content2" }).setClassToggle("#tab1-2", "--active").addTo(controller);
-        new ScrollMagic.Scene({ triggerElement: "#content3" }).setClassToggle("#tab1-3", "--active").addTo(controller);
-        new ScrollMagic.Scene({ triggerElement: "#content4" }).setClassToggle("#tab1-4", "--active").addTo(controller);
-      }
-    });
+    if ($tab.length) {
+      var controller = new ScrollMagic.Controller({ globalSceneOptions: { duration: 1000 } });
+      new ScrollMagic.Scene({ triggerElement: "#content1" }).setClassToggle("#tab1-1", "--active").addTo(controller);
+      new ScrollMagic.Scene({ triggerElement: "#content2" }).setClassToggle("#tab1-2", "--active").addTo(controller);
+      new ScrollMagic.Scene({ triggerElement: "#content3" }).setClassToggle("#tab1-3", "--active").addTo(controller);
+      new ScrollMagic.Scene({ triggerElement: "#content4" }).setClassToggle("#tab1-4", "--active").addTo(controller);
+    }
   }
 
   init();

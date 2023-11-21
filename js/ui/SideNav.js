@@ -84,7 +84,7 @@ export function SideNav(option = {}) {
     let currentAttr = currentButton.getAttribute("data-href");
 
     if (currentAttr !== null) {
-      window.location = `./pages/${currentAttr}.html`;
+      window.location = `/pages/${currentAttr}.html`;
       event.preventDefault();
     }
   }
