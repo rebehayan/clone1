@@ -1,4 +1,3 @@
-import { GNB } from "./ui/GNB.js";
 import { ToggleNav } from "./ui/ToggleNav.js";
 import { Toggle } from "./ui/Toggle.js";
 import { AuthorApps } from "./ui/AuthorApps.js";
@@ -7,8 +6,6 @@ import { ScrollHeader } from "./ui/ScrollHeader.js";
 import { SideNav } from "./ui/SideNav.js";
 import { Fullscreen } from "./ui/Fullscreen.js";
 import { InnerTab } from "./ui/InnerTab.js";
-
-GNB();
 
 // 사이드메뉴제어
 //방법1

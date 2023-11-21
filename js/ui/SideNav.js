@@ -15,6 +15,7 @@ export function SideNav(option = {}) {
   function bindEvent() {
     $btnDepth1.forEach(function (el) {
       el.addEventListener("click", openMenu);
+      el.addEventListener("click", gotoPage);
     });
   }
 
@@ -47,6 +48,7 @@ export function SideNav(option = {}) {
     });
   }
 
+  // 현재위치
   function currentNavigation() {
     let url = location.href; //현재 url
     let urlinfo = new URL(url); //url 구조분석
@@ -63,6 +65,17 @@ export function SideNav(option = {}) {
         el.parentElement.parentElement.previousElementSibling.classList.add("--active", "open");
       }
     });
+  }
+
+  // 페이지 링크
+  function gotoPage(event) {
+    let currentButton = event.currentTarget;
+    let currentAttr = currentButton.getAttribute("data-href");
+
+    if (currentAttr !== null) {
+      window.location = `/pages/${currentAttr}.html`;
+      event.preventDefault();
+    }
   }
 
   init();
