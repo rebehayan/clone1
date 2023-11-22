@@ -50,11 +50,11 @@
         <li><button class="btn-fullscreen"><abbr title="전체창보기" class="material-symbols-outlined">Expand</abbr></button>
         </li>
         <li>
-          <button class="btn-app"><abbr title="다른서비스" class="material-symbols-outlined">Apps</abbr></button>
+          <button class="btn-app" data-dialog-open="dialog1"><abbr title="다른서비스" class="material-symbols-outlined">Apps</abbr></button>
         </li>
         <li><button class="btn-menu"><abbr title="메뉴숨기기" class="material-symbols-outlined">exit_to_app</abbr></button>
         </li>
-        <li><button class="btn-setting"><abbr title="사이트설정" class="material-symbols-outlined">settings</abbr></button>
+        <li><button class="btn-setting" data-dialog-open="dialog2"><abbr title="사이트설정" class="material-symbols-outlined">settings</abbr></button>
         </li>
       </ul>
     </nav>
@@ -80,11 +80,11 @@
             <li><button role="link" data-href="html"><i class="material-symbols-outlined">html</i>HTML Guide</button>
             </li>
             <li><button role="link" data-href="css"><i class="material-symbols-outlined">css</i>CSS Guide</button></li>
-            <li><button><span class="material-symbols-outlined">style</span>Sass Guide</button></li>
-            <li><button><span class="material-symbols-outlined">javascript</span>Javascript Guide</button></li>
-            <li><button><span class="material-symbols-outlined">code_blocks</span>React Guide</button></li>
-            <li><button><span class="material-symbols-outlined">settings_Accessibility</span>Accessibility</button></li>
-            <li><button><span class="material-symbols-outlined">crossword</span>Cross Browser</button></li>
+            <li><button role="link" data-href="sass"><i class="material-symbols-outlined">style</i>Sass Guide</button></li>
+            <li><button role="link" data-href="js"><i class="material-symbols-outlined">javascript</i>Javascript Guide</button></li>
+            <li><button role="link" data-href="react"><i class="material-symbols-outlined">code_blocks</i>React Guide</button></li>
+            <li><button role="link" data-href="a11y"><i class="material-symbols-outlined">settings_Accessibility</i>Accessibility</button></li>
+            <li><button role="link" data-href="cross"><i class="material-symbols-outlined">crossword</i>Cross Browser</button></li>
           </ul>
         </li>
         <li>
@@ -94,15 +94,16 @@
             </li>
             <li><button role="link" data-href="typograph"><i class="material-symbols-outlined">text_fields</i>Typograph</button></li>
             <li><button role="link" data-href="align"><i class="material-symbols-outlined">align_horizontal_left</i>Align</button></li>
-            <li><button><span class="material-symbols-outlined">responsive_layout</span>Layout</button></li>
-            <li><button><span class="material-symbols-outlined">toggle_on</span>Button</button></li>
-            <li><button><span class="material-symbols-outlined">add_reaction</span>Badge</button></li>
-            <li><button><span class="material-symbols-outlined">tab</span>Tab</button></li>
-            <li><button><span class="material-symbols-outlined">table</span>Table</button></li>
-            <li><button><span class="material-symbols-outlined">table_view</span>Board</button></li>
-            <li><button><span class="material-symbols-outlined">Dialogs</span>Dialog</button></li>
-            <li><button><span class="material-symbols-outlined">view_Carousel</span>Carousel</button></li>
-            <li><button><span class="material-symbols-outlined">insert_Chart</span>Chart</button></li>
+            <li><button role="link" data-href="layout"><i class="material-symbols-outlined">responsive_layout</i>Layout</button></li>
+            <li><button role="link" data-href="button"><i class="material-symbols-outlined">toggle_on</i>Button</button></li>
+            <li><button role="link" data-href="badge"><i class="material-symbols-outlined">add_reaction</i>Badge</button></li>
+            <li><button role="link" data-href="form"><i class="material-symbols-outlined">select_check_box</i>Form</button></li>
+            <li><button role="link" data-href="tab"><i class="material-symbols-outlined">tab</i>Tab</button></li>
+            <li><button role="link" data-href="table"><i class="material-symbols-outlined">table</i>Table</button></li>
+            <li><button role="link" data-href="board"><i class="material-symbols-outlined">table_view</i>Board</button></li>
+            <li><button role="link" data-href="dialog"><i class="material-symbols-outlined">Dialogs</i>Dialog</button></li>
+            <li><button role="link" data-href="carousel"><i class="material-symbols-outlined">view_Carousel</i>Carousel</button></li>
+            <li><button role="link" data-href="chart"><i class="material-symbols-outlined">insert_Chart</i>Chart</button></li>
           </ul>
         </li>
         <li><button><span class="material-symbols-outlined">list_alt</span>Project Status</button></li>
@@ -120,7 +121,7 @@
         <h2 class="heading xsmall">xsmall</h2>
       </div>
       <pre>
-<code class="css">&lt;h2 class=&quot;heading large&quot;&gt;large&lt;/h2&gt;
+<code class="html">&lt;h2 class=&quot;heading large&quot;&gt;large&lt;/h2&gt;
 &lt;h2 class=&quot;heading regular&quot;&gt;regular&lt;/h2&gt;
 &lt;h2 class=&quot;heading small&quot;&gt;small&lt;/h2&gt;
 &lt;h2 class=&quot;heading xsmall&quot;&gt;xsmall&lt;/h2&gt;
@@ -136,7 +137,7 @@
         </ul>
       </div>
       <pre>
-<code class="css">&lt;ul class=&quot;list-type1&quot;&gt;
+<code class="html">&lt;ul class=&quot;list-type1&quot;&gt;
   &lt;li&gt;list-type1 &#47532;&#49828;&#53944; &#44032;&#51060;&#46300;&lt;/li&gt;
   &lt;li&gt;list-type1 &#47532;&#49828;&#53944; &#44032;&#51060;&#46300;&lt;/li&gt;
   &lt;li&gt;list-type1 &#47532;&#49828;&#53944; &#44032;&#51060;&#46300;&lt;/li&gt;
@@ -151,7 +152,7 @@
         <p class="txt-purple">txt-purple</p>
       </div>
       <pre>
-<code class="css">&lt;p class=&quot;txt-red&quot;&gt;txt-red&lt;/p&gt;
+<code class="html">&lt;p class=&quot;txt-red&quot;&gt;txt-red&lt;/p&gt;
 &lt;p class=&quot;txt-blue&quot;&gt;txt-blue&lt;/p&gt;
 &lt;p class=&quot;txt-purple&quot;&gt;txt-purple&lt;/p&gt;</code>
       </pre>
@@ -159,10 +160,10 @@
     <footer class="footer"><span class="txt-year"></span> &copy; FE Design System by HA SUNG PIL</footer>
   </div>
   <!-- 팝업 -->
-  <dialog class="dialog-service">
+  <dialog class="dialog-service" data-dialog="dialog1">
     <div class="dialog-service__header">
       <h2>Author Apps</h2>
-      <button class="dialog-service__close"><span class="material-symbols-outlined">close</span></button>
+      <button class="dialog-service__close" data-dialog-close="dialog1"><span class="material-symbols-outlined">close</span></button>
     </div>
     <ul class="dialog-service__list">
       <li><a href=""><img src="/images/ico_drive.png" alt="">Drive</a></li>
@@ -173,6 +174,21 @@
       <li><a href=""><img src="/images/ico_lms.png" alt="">LMS</a></li>
       <li><a href=""><img src="/images/ico_velog.png" alt="">Blog</a></li>
       <li><a href=""><img src="/images/ico_calendar.png" alt="">Calendar</a></li>
+    </ul>
+  </dialog>
+
+  <dialog class="dialog-settings" data-dialog="dialog2">
+    <div class="dialog-settings__header">
+      <h2><span class="material-symbols-outlined">cognition</span>FE UI Settings</h2>
+      <button class="dialog-settings__close" data-dialog-close="dialog2"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <ul class="dialog-settings__list">
+      <li>
+        <label class="btn-toggle">
+          <strong>Dark / Light Mode</strong>
+          <input type="checkbox" id="checkTheme">
+        </label>
+      </li>
     </ul>
   </dialog>
 

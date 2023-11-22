@@ -67,7 +67,7 @@ export function SideNav(option = {}) {
     $btnDepth1.forEach((el) => {
       let text = el.getAttribute("data-href");
 
-      if (isURL.match(text)) {
+      if (isURL == text) {
         const $ul = el.parentElement.parentElement;
 
         slideToggle($ul);

@@ -272,6 +272,7 @@ body.--fixed {
       display: none;
     }
     & i {
+      display: none;
       font-size: 1.6rem;
     }
     & button {
@@ -348,7 +349,7 @@ body.--fixed {
 
 /* 팝업 */
 .dialog-service {
-  position: absolute;
+  position: fixed;
   left: inherit;
   right: 4rem;
   top: 4rem;
@@ -801,4 +802,88 @@ body.--fixed {
   height: auto;
   aspect-ratio: 16 / 9;
   background-color: #4fcb8d;
+}
+
+.dialog-settings {
+  position: fixed;
+  right: 300px;
+  top: 0;
+  bottom: 0;
+  left: inherit;
+  z-index: 1500;
+  padding: 0;
+  width: 300px;
+  height: 100%;
+  background-color: var(--white);
+  border-left: 1px solid #ccc;
+  transition: right 0.4s;
+  &[open] {
+    animation: toRight 1 0.4s both;
+  }
+}
+@keyframes toRight {
+  0% {
+    right: -300px;
+  }
+  100% {
+    right: 0;
+  }
+}
+.dialog-settings__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  & h2 {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 800;
+    & span {
+      font-size: 40px;
+    }
+  }
+}
+.dialog-settings__list {
+  padding: 15px;
+  & strong {
+    display: block;
+    padding: 0 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--gray29);
+  }
+}
+
+.btn-toggle {
+  & input {
+    position: relative;
+    appearance: none;
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    transition: border-color 0.4s;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background-color: var(--gray67);
+      border-radius: 100%;
+      transition: left 0.4s;
+    }
+    &:checked {
+      border-color: var(--gray29);
+      &::before {
+        left: 32px;
+      }
+    }
+  }
+}
+.a11y-hidden {
+  display: none;
 }
