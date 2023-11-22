@@ -1,0 +1,37 @@
+:root {
+  --white: #fff;
+  --black: #000;
+  --blue: #1765fd;
+  --green: #4fcb8d;
+  --purple: #5c31d6;
+  --red: #fe5957;
+  --gray29: #292d32;
+  --gray67: #67748e;
+  --grayca: #cad6fe;
+  --graycc: #ccc;
+  --grayde: #dee2e6;
+  --grayeb: #ebf1ff;
+  --grayee: #eee;
+  --grayf8: #f8faff;
+}
+
+$white: var(--white);
+$black: var(--black);
+$black00: rgba($black, 0);
+$black005: rgba($black, 0.05);
+$black01: rgba($black, 0.1);
+$black015: rgba($black, 0.15);
+$black03: rgba($black, 0.3);
+$blue: var(--blue);
+$green: var(--green);
+$purple: var(--purple);
+$red: var(--red);
+$gray29: var(--gray29);
+$gray67: var(--gray67);
+$grayca: var(--grayca);
+$grayca04: rgba(var(--grayca), 0.4);
+$graycc: var(--graycc);
+$grayde: var(--grayde);
+$grayeb: var(--grayeb);
+$grayee: var(--grayee);
+$grayf8: var(--grayf8);

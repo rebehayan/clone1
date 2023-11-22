@@ -1,0 +1,38 @@
+.tab-type1 {
+  @include darkMode {
+    --gray29: #fff;
+    --white: #2b3035;
+  }
+  position: sticky;
+  top: 15rem;
+  z-index: 100;
+  margin-bottom: 4rem;
+  padding: 0.5rem;
+  box-shadow: 0 0 2rem 0.3rem $black005;
+  border-radius: 0.6rem;
+  background-color: $white;
+  ul {
+    display: flex;
+  }
+  li {
+    flex: 1;
+  }
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1.6rem;
+    font-size: 1.5rem;
+    color: $gray29;
+    border-radius: 0.6rem;
+    transition: 0.4s;
+  }
+  .--active {
+    @include darkMode {
+      --white: #fff;
+    }
+    background-color: $blue;
+    color: $white;
+    font-weight: 700;
+  }
+}

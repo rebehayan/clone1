@@ -1,0 +1,8 @@
+// 이미지 경로
+$url: "../images/";
+
+// 이미지명, 좌표, 배경색, 크기
+@mixin bg($file, $coordinate: null, $color: null, $size: null) {
+  background: url(#{$url}#{$file}) no-repeat $coordinate $color;
+  background-size: $size;
+}

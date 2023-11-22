@@ -95,7 +95,7 @@ body.--fixed {
   padding: 3rem 2rem;
   margin: 1.2rem;
   border-radius: 3rem;
-  box-shadow: 0 0 2rem 0.3rem rgba(var(--black), 0.05);
+  box-shadow: 0 0 2rem 0.3rem rgba(0, 0, 0, 0.05);
   background-color: var(--white);
   .--fixed & {
     position: fixed;
@@ -137,7 +137,7 @@ body.--fixed {
   }
   & button {
     border: none;
-    color: rgba(var(--black), 0.5);
+    color: var(--gray29);
   }
 }
 .btn-setting abbr {

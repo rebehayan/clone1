@@ -1,0 +1,121 @@
+.guide-list {
+  @include darkMode {
+    --grayeb: #3e444b;
+    --white: #2b3035;
+    --gray29: #fff;
+    --gray67: #adb5bd;
+  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  & li {
+    display: grid;
+    gap: 1.2rem;
+    align-items: flex-start;
+    background: $white;
+    padding: 3rem;
+    box-shadow: 0px 0.5rem 2.5rem $grayca04;
+    border: 1px solid $grayeb;
+    border-radius: 2rem;
+  }
+  .btn-more {
+    justify-self: start;
+  }
+}
+.guide-list__title {
+  display: block;
+  color: $gray29;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.guide-list__detail {
+  font-size: 1.4rem;
+  color: $gray67;
+  line-height: 140%;
+}
+
+.guide-block {
+  border: 1px dashed $grayca;
+  margin: 1rem 0 2rem;
+  padding: 1rem;
+  min-height: 5rem;
+  border-radius: 0.8rem;
+}
+
+.color-block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+  & li {
+    text-align: center;
+    &::before {
+      content: "";
+      display: block;
+      margin: 0 auto 0.5rem;
+      width: 10rem;
+      height: 10rem;
+      border: 1px solid $gray29;
+    }
+    &:nth-child(1)::before {
+      background-color: #fff;
+    }
+    &:nth-child(2)::before {
+      background-color: #000;
+    }
+    &:nth-child(3)::before {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    &:nth-child(4)::before {
+      background-color: blue;
+    }
+    &:nth-child(5)::before {
+      background-color: #222;
+    }
+    &:nth-child(6)::before {
+      background-color: #ebebeb;
+    }
+    &:nth-child(7)::before {
+      background-color: #f1f1f1;
+    }
+  }
+}
+
+/* 코드꾸미기 */
+.hljs {
+  @include darkMode {
+    background-color: #2b3035;
+  }
+}
+.hljs-ln {
+  table-layout: fixed;
+}
+.hljs-ln-numbers {
+  user-select: none;
+  text-align: center;
+  color: $graycc;
+  border-right: 1px solid $graycc;
+  vertical-align: top;
+  width: 2.5rem;
+}
+.hljs-ln td.hljs-ln-code {
+  padding: 0.2rem 0.5rem;
+}
+.txt-code {
+  display: inline-block;
+  background-color: $grayeb;
+  font-weight: 500;
+  color: $purple;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.8em;
+}
+
+#player {
+  @include position(right, 3rem, top, 50%);
+  width: 300px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background-color: $green;
+}

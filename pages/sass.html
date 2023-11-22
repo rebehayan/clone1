@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
-  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="/favicon.svg">
 
   <!-- lodash -->
@@ -118,9 +118,29 @@
 <code class="html"></code>
       </pre>
       <h3 class="heading regular">Variables</h3>
-      <div class="guide-block"></div>
+      <h3 class="heading small">Color</h3>
+      <ul class="list-type1">
+        <li>모든색상은 <span class="txt-code">$컬러명</span>으로 정의한다</li>
+        <li>유채색은 <span class="txt-code">$컬러명+숫자로</span> 정의한다</li>
+        <li>무채색은 <span class="txt-code">$컬러명+컬러코드 앞두자리</span>로 정의한다</li>
+        <li>투명색은 <span class="txt-code">$컬러명+투명도 숫자</span>로 정의한다</li>
+      </ul>
       <pre>
-<code class="html"></code>
+<code class="scss">무채색
+$white: #fff;
+$black: #000;
+$black01: rgba($black, 0.1);
+$black03: rgba($black, 0.3);
+$gray29: #292d32;
+$graycc: #ccc;
+$grayee: #eee;
+
+유채색
+$blue: #1765fd;
+$blue2: #1789ff;
+$green: #4fcb8d;
+$purple: #5c31d6;
+$red: #fe5957;</code>
       </pre>
       <h3 class="heading regular">Mixin</h3>
       <div class="guide-block"></div>

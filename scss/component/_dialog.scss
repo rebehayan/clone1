@@ -1,0 +1,125 @@
+@keyframes appDialog {
+  0% {
+    transform: translateY(-1.5rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toRight {
+  0% {
+    right: -30rem;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+.dialog-service {
+  position: fixed;
+  left: inherit;
+  right: 4rem;
+  top: 4rem;
+  z-index: 1500;
+  margin: 0;
+  padding: 0;
+  width: 35rem;
+  box-shadow: 0 0 2rem 0.3rem rgba($black, 0.05);
+  border: 1px solid $grayee;
+  border-radius: 0 0 1rem 1rem;
+  transform: translateY(-1rem);
+  opacity: 0;
+  &[open] {
+    animation: appDialog 1 0.5s both;
+  }
+}
+.dialog-service__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem 1rem 0 0;
+  background: linear-gradient(to bottom, $blue, $green);
+  & h2,
+  & button {
+    font-size: 1.3rem;
+    color: $white;
+    font-weight: 700;
+  }
+}
+.dialog-service__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2rem 1rem;
+
+  & a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: $gray29;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  & img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.dialog-settings {
+  @include darkMode {
+    --white: #2b3035;
+    --graycc: #3e444b;
+    --gray29: #fff;
+    color: $gray29;
+    button {
+      color: $gray29;
+    }
+  }
+  position: fixed;
+  right: 30rem;
+  top: 0;
+  bottom: 0;
+  left: inherit;
+  z-index: 1500;
+  padding: 0;
+  width: 30rem;
+  height: 100%;
+  background-color: $white;
+  border-left: 1px solid $graycc;
+  transition: right 0.4s;
+  &[open] {
+    animation: toRight 1 0.4s both;
+  }
+}
+
+.dialog-settings__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid $graycc;
+  & h2 {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 800;
+    & span {
+      font-size: 4rem;
+    }
+  }
+}
+.dialog-settings__list {
+  padding: 1.5rem;
+  & strong {
+    display: block;
+    padding: 0 0 1rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $gray29;
+  }
+}

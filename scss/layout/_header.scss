@@ -1,0 +1,108 @@
+@keyframes searchShow {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 46rem;
+    opacity: 1;
+  }
+}
+@keyframes headerFixed {
+  0% {
+    top: -15rem;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes btnSetting {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.header {
+  @include darkMode {
+    --white: #262b2f;
+    --gray29: #fff;
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  padding: 3rem 2rem;
+  margin: 1.2rem;
+  border-radius: 3rem;
+  box-shadow: 0 0 2rem 0.3rem $black005;
+  background-color: $white;
+  .--fixed & {
+    position: fixed;
+    top: -15rem;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 0 20px 3px $black005;
+    animation: headerFixed 1 0.5s both;
+  }
+}
+
+.logo {
+  a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $gray29;
+  }
+  span {
+    font-size: 5rem;
+    color: $gray29;
+  }
+}
+
+.utility {
+  ul {
+    display: flex;
+    gap: 1rem;
+  }
+  button {
+    border: none;
+    color: $gray29;
+  }
+}
+.btn-setting abbr {
+  animation: btnSetting infinite linear 3s;
+}
+
+.search-bar {
+  @include darkMode {
+    --grayf8: #212529;
+    --grayca: #3e444b;
+  }
+  opacity: 0;
+  width: 0;
+  position: relative;
+  span {
+    @include position(left, 2rem, top, 50%);
+    color: $gray29;
+  }
+  input {
+    padding: 0 0 0 5rem;
+    width: 100%;
+    height: 4.8rem;
+    border-radius: 4.8rem;
+    background: $grayf8;
+    border: 1px solid $grayca;
+    color: $gray29;
+    outline: none;
+  }
+  &.--active {
+    animation: searchShow 1 0.5s both;
+  }
+}

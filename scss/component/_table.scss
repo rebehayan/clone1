@@ -1,0 +1,25 @@
+caption div {
+  @include a11y-hidden;
+}
+
+.table-type1 {
+  @include darkMode {
+    --gray29: #fff;
+    --grayde: #3e444b;
+    --grayf8: #2b3035;
+  }
+  margin: 2rem 0 4rem;
+  th,
+  td {
+    border: 1px solid $grayde;
+    font-size: 1.5rem;
+    color: $gray29;
+    padding: 0.8rem;
+    vertical-align: middle;
+  }
+  tbody th,
+  thead {
+    font-weight: 700;
+    background-color: $grayf8;
+  }
+}

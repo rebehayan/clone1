@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
-  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/style.css">
   <link rel="icon" href="/favicon.svg">
 
   <!-- lodash -->
@@ -50,11 +50,11 @@
         <li><button class="btn-fullscreen"><abbr title="전체창보기" class="material-symbols-outlined">Expand</abbr></button>
         </li>
         <li>
-          <button class="btn-app"><abbr title="다른서비스" class="material-symbols-outlined">Apps</abbr></button>
+          <button class="btn-app" data-dialog-open="dialog1"><abbr title="다른서비스" class="material-symbols-outlined">Apps</abbr></button>
         </li>
         <li><button class="btn-menu"><abbr title="메뉴숨기기" class="material-symbols-outlined">exit_to_app</abbr></button>
         </li>
-        <li><button class="btn-setting"><abbr title="사이트설정" class="material-symbols-outlined">settings</abbr></button>
+        <li><button class="btn-setting" data-dialog-open="dialog2"><abbr title="사이트설정" class="material-symbols-outlined">settings</abbr></button>
         </li>
       </ul>
     </nav>
@@ -274,22 +274,38 @@
     </main>
     <footer class="footer"><span class="txt-year"></span> &copy; FE Design System by HA SUNG PIL</footer>
   </div>
-  <dialog class="dialog-service">
+  <dialog class="dialog-service" data-dialog="dialog1">
     <div class="dialog-service__header">
       <h2>Author Apps</h2>
-      <button class="dialog-service__close"><span class="material-symbols-outlined">close</span></button>
+      <button class="dialog-service__close" data-dialog-close="dialog1"><span class="material-symbols-outlined">close</span></button>
     </div>
     <ul class="dialog-service__list">
-      <li><a href=""><img src="./images/ico_drive.png" alt="">Drive</a></li>
-      <li><a href=""><img src="./images/ico_git.png" alt="">Github</a></li>
-      <li><a href=""><img src="./images/ico_gmail.png" alt="">Gmail</a></li>
-      <li><a href=""><img src="./images/ico_kakao.png" alt="">OpenChat</a></li>
-      <li><a href=""><img src="./images/ico_behance.png" alt="">Behance</a></li>
-      <li><a href=""><img src="./images/ico_lms.png" alt="">LMS</a></li>
-      <li><a href=""><img src="./images/ico_velog.png" alt="">Blog</a></li>
-      <li><a href=""><img src="./images/ico_calendar.png" alt="">Calendar</a></li>
+      <li><a href=""><img src="/images/ico_drive.png" alt="">Drive</a></li>
+      <li><a href=""><img src="/images/ico_git.png" alt="">Github</a></li>
+      <li><a href=""><img src="/images/ico_gmail.png" alt="">Gmail</a></li>
+      <li><a href=""><img src="/images/ico_kakao.png" alt="">OpenChat</a></li>
+      <li><a href=""><img src="/images/ico_behance.png" alt="">Behance</a></li>
+      <li><a href=""><img src="/images/ico_lms.png" alt="">LMS</a></li>
+      <li><a href=""><img src="/images/ico_velog.png" alt="">Blog</a></li>
+      <li><a href=""><img src="/images/ico_calendar.png" alt="">Calendar</a></li>
     </ul>
   </dialog>
+
+  <dialog class="dialog-settings" data-dialog="dialog2">
+    <div class="dialog-settings__header">
+      <h2><span class="material-symbols-outlined">cognition</span>FE UI Settings</h2>
+      <button class="dialog-settings__close" data-dialog-close="dialog2"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <ul class="dialog-settings__list">
+      <li>
+        <label class="btn-toggle">
+          <strong>Dark / Light Mode</strong>
+          <input type="checkbox" id="checkTheme">
+        </label>
+      </li>
+    </ul>
+  </dialog>
+
 </body>
 
 </html>

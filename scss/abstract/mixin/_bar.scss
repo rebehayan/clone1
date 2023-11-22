@@ -1,0 +1,22 @@
+// 선/배경 , 가로, 세로, 좌우여백, 배경
+@mixin bar($method, $w, $h, $margin, $bg) {
+  display: flex;
+  > li {
+    display: flex;
+    align-items: center;
+    + li {
+      &::before {
+        content: "";
+        margin: 0 rem($margin);
+        width: rem($w);
+        height: rem($h);
+
+        @if $method == "l" or $method == "line" {
+          background-color: $bg;
+        } @else if $method == "bg" or $method == "img" {
+          @include bg($bg);
+        }
+      }
+    }
+  }
+}

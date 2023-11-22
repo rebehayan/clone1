@@ -1,0 +1,63 @@
+$webSize: 120rem;
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  &.dark {
+    --grayf8: #212529;
+    --scroll: #3e444b;
+    color: $white;
+
+    @include scroll("r", 0.8rem, var(--scroll));
+  }
+  background: $grayf8;
+  font-size: 1rem;
+  @include scroll("r", 0.8rem, $black015);
+  &.--fixed {
+    padding-top: 11.1rem;
+  }
+}
+
+.m0auto {
+  width: $webSize;
+  margin: 0 auto;
+  @include mobile {
+    width: auto;
+  }
+}
+
+.container {
+  @include darkMode {
+    --white: #212529;
+  }
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 1fr min-content;
+  min-height: calc(100vh - 15rem);
+  padding: 1.5rem 0 0;
+  background: $white;
+}
+.contents {
+  padding: 0 3rem;
+  font-size: 1.6rem;
+  line-height: 130%;
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 30rem;
+    right: 0;
+    z-index: 10;
+    height: 0;
+    background: linear-gradient(to bottom, $white 70%, $black00);
+    transition: height 0.4s;
+  }
+  .--fixed & {
+    &::before {
+      height: 25rem;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+// 뱃지크기
+// 클래스, 높이, 좌우여백, 폰트크기
+$badgesize: "small" 18 6 10, "regular" 20 8.5 10;
+
+// 뱃지색
+// 클래스, 배경, 선색, 텍스트색
+$badgecolor: "white" $white $white $black, "black" $black $black $white;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+// 뱃지크기
+@each $class, $h, $pad, $fs in $badgesize {
+  .badge.#{$class} {
+    padding: 0 $pad;
+    border: 1px solid;
+    border-radius: $h;
+    box-sizing: border-box;
+    font-size: $fs;
+  }
+}
+// 뱃지 색상
+@each $class, $bg, $border, $txt in $badgecolor {
+  .badge.#{$class} {
+    background: $bg;
+    border-color: $border;
+    color: $txt;
+  }
+}

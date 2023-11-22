@@ -1,0 +1,19 @@
+// 방향, 굵기, 색상
+@mixin scroll($dir, $w, $c) {
+  &::-webkit-scrollbar {
+    @if $dir == "right" or $dir == "r" {
+      width: $w;
+    } @else if $dir == "bottom" or $dir == "b" {
+      height: $w;
+    }
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    width: $w;
+    background-color: $c;
+    border-radius: $w;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}

@@ -52,7 +52,7 @@ export function SideNav(option = {}) {
 
   // depth2 ul 높이계산
   function slideToggle(depth2) {
-    let isheight = depth2.children.length * 43; // 43 = 개별높이
+    let isheight = depth2.children.length * 40; // 40 = 개별높이
     depth2.style.cssText = `height:${isheight - 14}px`;
   }
 

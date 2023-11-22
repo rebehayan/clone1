@@ -1,0 +1,157 @@
+$select_arrow: "bg_select.svg"; //select 화살표
+$select_arrow_disabled: "bg_select_disabled.svg"; //select dislabed화살표
+$select_x: 20rem; // select 아이콘 우측위치
+$select_pad: 20rem; // select 좌측여백
+$icon_width: 20rem; // select 아이콘 가로크기
+$select_zindex: 100rem; //z-index
+
+$form_height: 10rem; //input높이
+$form_padding: 10rem; //input 좌우여백
+$form_border: $black; //input 외곽선
+$form_radius: 10rem; //input 모서리 둥근
+$form_color: $black; //input value 색
+$form_fs: 10rem; //input value 폰트크기
+$placeholder: $black; // placeholder 색
+
+$disabled_border: $black; //disabled 선색
+$disabled_bg: $black; //disabled 배경색
+$disabled_color: $black; //disabled 텍스트색
+
+$readonly_border: $black; //readonly 선색
+$readonly_bg: $black; //readonly 배경색
+$readonly_color: $black; //readonly 텍스트색
+
+$date_pad: 10rem; //달력아이콘우측여백
+$date_ico: "ico_date.svg"; // 달력아이콘
+
+// 체크박스, 라디오버튼
+$label_pad: 10rem; //좌측여백
+$label_lh: $form_height; //줄간격
+$label_fs: 10rem; //폰트크기
+$label_c: $black; //색
+$bg_chk_off: "bg_check_off.svg"; //체크박스 체크전 이미지
+$bg_chk_on: "bg_check_on.svg"; //체크박스 체크후 이미지
+$bg_ra_off: "bg_radio_off.svg"; //라디오버튼 체크전 이미지
+$bg_ra_on: "bg_radio_on.svg"; //라디오버튼 체크후 이미지
+
+%form {
+  padding: 0 $form_padding;
+  width: 100%; //모바일은 가로100%
+  height: $form_height;
+  border: 1px solid $form_border;
+  box-sizing: border-box;
+  border-radius: $form_radius;
+  color: $form_color;
+  font-size: $form_fs;
+  min-width: 0;
+  &::placeholder {
+    color: $placeholder;
+  }
+  &:disabled {
+    border-color: $disabled_border;
+    background-color: $disabled_bg;
+    color: $disabled_color;
+  }
+  &:readonly {
+    border-color: $readonly_border;
+    background-color: $readonly_bg;
+    color: $readonly_color;
+  }
+  &:-webkit-autofill {
+    transition: background-color 5000s;
+    &:hover,
+    &:active,
+    &:focus {
+      transition: background-color 5000s;
+    }
+  }
+}
+
+%label {
+  @include a11y-hidden;
+  + label {
+    display: inline-block;
+    padding-left: $label_pad;
+    line-height: $label_lh;
+    font-size: $label_fs;
+    color: $label_c;
+    &:empty {
+      padding: 0;
+      width: $label_pad - 6;
+      height: $label_lh;
+    }
+  }
+}
+
+// select화살표 초기화
+@mixin select($x, $pad, $iconWidth) {
+  $sum: $iconWidth + ($x * 2);
+
+  @include bg(#{$select_arrow}, right $x, center);
+
+  padding-right: $sum;
+  appearance: none;
+  &:disabled {
+    @include bg(#{$select_arrow_disabled}, right $x, center);
+  }
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+.textarea,
+.input {
+  @extend %form;
+}
+
+.select {
+  @extend %form;
+  @include select($select_x, $select_pad, $icon_width);
+}
+
+[data-select] {
+  position: relative;
+  [data-select-option] {
+    position: absolute;
+    z-index: $select_zindex;
+  }
+}
+
+.checkbox {
+  @extend %label;
+  + label {
+    @include bg($bg_chk_off, left, center);
+  }
+  &:checked {
+    + label {
+      @include bg($bg_chk_on, left, center);
+    }
+  }
+}
+.radio {
+  @extend %label;
+  + label {
+    @include bg($bg_ra_off, left, center);
+  }
+  &:checked {
+    + label {
+      @include bg($bg_ra_on, left, center);
+    }
+  }
+}
+.date {
+  @include bg($date_ico, right $date_pad, center);
+  &[data-placeholder]::before {
+    color: $label_c;
+    font-size: $label_fs;
+    line-height: 1;
+    font-family: $fontFamily;
+  }
+}
+.file {
+  @include a11y-hidden;
+  + label {
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+}

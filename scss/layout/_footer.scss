@@ -1,0 +1,16 @@
+.footer {
+  @include darkMode {
+    --grayeb: #2b3035;
+    --grayca: #2b3035;
+    --gray29: #adb5bd;
+  }
+  background: $grayeb;
+  border: 1px solid $grayca;
+  border-radius: 2rem;
+  padding: 2rem;
+  margin: 2rem 3rem 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: $gray29;
+  text-align: center;
+}

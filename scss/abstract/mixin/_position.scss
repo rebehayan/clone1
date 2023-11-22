@@ -1,0 +1,13 @@
+@mixin position($x, $xv, $y, $yv, $z: 1) {
+  position: absolute;
+  #{$x}: $xv;
+  #{$y}: $yv;
+  z-index: $z;
+  @if $xv == 50% and $yv == 50% {
+    transform: translate(-50%, -50%);
+  } @else if $xv == 50% {
+    transform: translateX(-50%);
+  } @else if $yv == 50% {
+    transform: translateY(-50%);
+  }
+}

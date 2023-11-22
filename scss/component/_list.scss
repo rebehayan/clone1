@@ -1,0 +1,11 @@
+.list-type1 {
+  display: grid;
+  gap: 0.8rem;
+  margin: 1rem 2rem 2rem 2rem;
+  li {
+    list-style-type: square;
+    &::marker {
+      font-size: 1rem;
+    }
+  }
+}

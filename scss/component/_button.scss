@@ -1,0 +1,105 @@
+// 버튼
+// 버튼사이즈
+// 클래스, 높이, 좌우여백, 폰트크기
+$btnsize: "small" 34 12 14, "regular" 40 20 16, "large" 48 22 14;
+
+// 버튼색
+// 클래스, 배경, 선색, 텍스트색
+$btncolor: "white" $white $white $black, "black" $black $black $white;
+
+// 버튼아이콘
+// 클래스명, after/before, 가로, 세로, 배경, 여백
+$btnicon: 1 b 14 16 "ico_book_white" 9, 2 a 14 16 "ico_book_black" 9;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+// 버튼크기
+@each $class, $h, $pad, $fs in $btnsize {
+  .btn.#{$class} {
+    padding: 0 $pad;
+    height: $h;
+    line-height: $h - 2;
+    border: 1px solid;
+    border-radius: $h;
+    box-sizing: border-box;
+    font-size: $fs;
+  }
+}
+// 버튼색상
+@each $class, $bg, $border, $txt in $btncolor {
+  .btn.#{$class} {
+    background: $bg;
+    border-color: $border;
+    color: $txt;
+  }
+}
+
+// 버튼 아이콘
+@each $i, $dir, $w, $h, $bg, $margin in $btnicon {
+  .btn.ico#{$i} {
+    @if $dir == "before" or $dir == "b" {
+      &::before {
+        content: "";
+        width: $w;
+        height: $h;
+        margin-right: $margin;
+        @include bg(#{$bg});
+      }
+    } @else if $dir == "after" or $dir == "a" {
+      &::after {
+        content: "";
+        width: $w;
+        height: $h;
+        margin-left: $margin;
+        @include bg(#{$bg});
+      }
+    }
+  }
+}
+
+.btn-toggle {
+  input {
+    position: relative;
+    appearance: none;
+    width: 6rem;
+    height: 3rem;
+    border-radius: 3rem;
+    border: 1px solid $graycc;
+    transition: border-color 0.4s;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2rem;
+      height: 2rem;
+      background-color: $gray67;
+      border-radius: 100%;
+      transition: left 0.4s;
+    }
+    &:checked {
+      border-color: $gray29;
+      &::before {
+        left: 3.2rem;
+      }
+    }
+  }
+}
+
+.btn-more {
+  @include darkMode {
+    --white: #fff;
+  }
+  display: inline-block;
+  background-color: $purple;
+  font-size: 1.4rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.7rem;
+  color: $white;
+}

@@ -1,0 +1,31 @@
+.align {
+  display: flex;
+  &.center {
+    justify-content: center;
+  }
+  &.left {
+    justify-content: flex-start;
+  }
+  &.right {
+    justify-content: flex-end;
+  }
+  &.vt {
+    align-items: flex-start;
+  }
+  &.vm {
+    align-items: center;
+  }
+  &.vb {
+    align-items: flex-end;
+  }
+}
+
+.txt-center {
+  text-align: center;
+}
+.txt-left {
+  text-align: left;
+}
+.txt-right {
+  text-align: right;
+}
