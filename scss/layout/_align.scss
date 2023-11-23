@@ -9,6 +9,9 @@
   &.right {
     justify-content: flex-end;
   }
+  &.both {
+    justify-content: space-between;
+  }
   &.vt {
     align-items: flex-start;
   }

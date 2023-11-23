@@ -3,6 +3,11 @@
 :root {
   --white: #fff;
   --black: #000;
+  --black00: rgba(0, 0, 0, 0);
+  --black005: rgba(0, 0, 0, 0.05);
+  --black01: rgba(0, 0, 0, 0.1);
+  --black015: rgba(0, 0, 0, 0.15);
+  --black03: rgba(0, 0, 0, 0.3);
   --blue: #1765fd;
   --green: #4fcb8d;
   --purple: #5c31d6;
@@ -10,6 +15,7 @@
   --gray29: #292d32;
   --gray67: #67748e;
   --grayca: #cad6fe;
+  --grayca04: rgb(200, 213, 254, 0.4);
   --graycc: #ccc;
   --grayde: #dee2e6;
   --grayeb: #ebf1ff;
@@ -209,7 +215,7 @@ input[type=date]:valid::before {
   align-items: flex-start;
   background: var(--white);
   padding: 3rem;
-  box-shadow: 0px 0.5rem 2.5rem rgba(var(--grayca), 0.4);
+  box-shadow: 0px 0.5rem 2.5rem var(--grayca04);
   border: 1px solid var(--grayeb);
   border-radius: 2rem;
 }
@@ -319,6 +325,77 @@ input[type=date]:valid::before {
   height: auto;
   aspect-ratio: 16/9;
   background-color: var(--green);
+}
+
+.folder-tree {
+  line-height: 1.2;
+  font-size: 1.4rem;
+}
+.folder-tree > ul::before {
+  content: "root";
+  display: inline-block;
+  padding: 0.3rem 0.5rem;
+  margin: 0 0 1rem;
+  background-color: var(--green);
+  border-radius: 0.3rem;
+  color: var(--white);
+}
+.folder-tree > ul > li.scss {
+  margin: 0 0 0 1rem;
+}
+.folder-tree > ul > li.scss::before {
+  display: none;
+}
+.folder-tree > ul > li > ul {
+  margin: -1rem 0 0 1.5rem;
+  padding: 0 0 1.5rem 1.5rem;
+  border-left: 1px dashed var(--gray67);
+}
+.folder-tree > ul > li > ul::before {
+  display: none;
+}
+.folder-tree > ul > li > ul > li > ul {
+  margin: 0 0 1.5rem 1.5rem;
+  padding: 0 0 0 1.5rem;
+  border-left: 1px dashed var(--gray67);
+}
+.folder-tree > ul > li > ul > li > ul::before {
+  display: none;
+}
+.folder-tree > ul .folder::before {
+  content: "\e2cc";
+  display: inline-block;
+  font-family: "Material Symbols Outlined";
+  font-size: 3rem;
+  color: var(--blue);
+  vertical-align: -0.8rem;
+}
+.folder-tree > ul .folder > ul {
+  position: relative;
+  padding-top: 1rem;
+}
+.folder-tree > ul .folder > ul::before {
+  position: absolute;
+  left: 0;
+  top: 3rem;
+  z-index: 1;
+  content: "";
+  width: 1.5rem;
+  height: 0;
+  border-bottom: 1px dashed var(--gray67);
+}
+.folder-tree > ul .scss {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: -1.3rem;
+  line-height: 1.8;
+}
+.folder-tree > ul .scss::before {
+  content: "";
+  display: inline-block;
+  width: 2rem;
+  border-bottom: 1px dashed var(--gray67);
 }
 
 html {
@@ -552,7 +629,7 @@ body {
 }
 .side-nav > ul::-webkit-scrollbar-thumb {
   width: 0.4rem;
-  background-color: rgba(var(--black), 0.1);
+  background-color: var(--black01);
   border-radius: 0.4rem;
 }
 .side-nav > ul::-webkit-scrollbar-track {
@@ -781,7 +858,7 @@ body {
   z-index: 100;
   margin-bottom: 4rem;
   padding: 0.5rem;
-  box-shadow: 0 0 2rem 0.3rem rgba(var(--black), 0.05);
+  box-shadow: 0 0 2rem 0.3rem var(--black005);
   border-radius: 0.6rem;
   background-color: var(--white);
 }
@@ -994,7 +1071,7 @@ body::-webkit-scrollbar {
 }
 body::-webkit-scrollbar-thumb {
   width: 0.8rem;
-  background-color: rgba(var(--black), 0.15);
+  background-color: var(--black015);
   border-radius: 0.8rem;
 }
 body::-webkit-scrollbar-track {
@@ -1039,7 +1116,7 @@ body.--fixed {
   right: 0;
   z-index: 10;
   height: 0;
-  background: linear-gradient(to bottom, var(--white) 70%, rgba(var(--black), 0));
+  background: linear-gradient(to bottom, var(--white) 70%, var(--black00));
   transition: height 0.4s;
 }
 .--fixed .contents::before {
@@ -1057,6 +1134,9 @@ body.--fixed {
 }
 .align.right {
   justify-content: flex-end;
+}
+.align.both {
+  justify-content: space-between;
 }
 .align.vt {
   align-items: flex-start;
@@ -1115,7 +1195,7 @@ body.--fixed {
   padding: 3rem 2rem;
   margin: 1.2rem;
   border-radius: 3rem;
-  box-shadow: 0 0 2rem 0.3rem rgba(var(--black), 0.05);
+  box-shadow: 0 0 2rem 0.3rem var(--black005);
   background-color: var(--white);
 }
 .dark .header {
@@ -1128,7 +1208,7 @@ body.--fixed {
   left: 0;
   right: 0;
   z-index: 1000;
-  box-shadow: 0 0 20px 3px rgba(var(--black), 0.05);
+  box-shadow: 0 0 20px 3px var(--black005);
   animation: headerFixed 1 0.5s both;
 }
 
@@ -1235,7 +1315,7 @@ body.--fixed {
 
 .state-block {
   background: var(--white);
-  box-shadow: 0px 0.2rem 1.5rem rgba(var(--grayca), 0.4);
+  box-shadow: 0px 0.2rem 1.5rem var(--grayca04);
   border: 1px solid var(--grayeb);
   border-radius: 2rem;
   padding: 2.5rem 2rem;

@@ -8,6 +8,7 @@ import { Fullscreen } from "./ui/Fullscreen.js";
 import { InnerTab } from "./ui/InnerTab.js";
 import { Year } from "./ui/Year.js";
 import { Theme } from "./ui/Theme.js";
+import { TreeFolder } from "./ui/TreeFolder.js";
 // 사이드메뉴제어
 //방법1
 // ToggleNav();
@@ -30,3 +31,4 @@ Fullscreen(); //전체창
 InnerTab(); // 내부링크탭
 Year(); // 푸터 년도
 Theme(); //테마
+TreeFolder(); // sass 폴더구조

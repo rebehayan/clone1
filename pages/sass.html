@@ -113,10 +113,70 @@
       <!-- 본문 -->
       <h2 class="heading large">Sass(SCSS) Guide</h2>
       <h3 class="heading regular">SCSS Architecture</h3>
-      <div class="guide-block"></div>
-      <pre>
-<code class="html"></code>
-      </pre>
+      <p>SCSS 폴더는 root로 부터 시작한다.</p>
+      <div class="guide-block">
+        <div class="folder-tree">
+          <ul>
+            <li>
+              abstract
+              <ul>
+                <li>
+                  mixin
+                  <ul>
+                    <li>_a11y-hidden.scss</li>
+                    <li>_background.scss</li>
+                    <li>_bar.scss</li>
+                    <li>_ellipsis.scss</li>
+                    <li>_position.scss</li>
+                    <li>_responsive.scss</li>
+                    <li>_scroll.scss</li>
+                    <li>_theme.scss</li>
+                  </ul>
+                </li>
+                <li>_mixin.scss</li>
+                <li>_variable.scss</li>
+              </ul>
+            </li>
+            <li>
+              base
+              <ul>
+                <li>_guide.scss</li>
+                <li>_reset.scss</li>
+                <li>_typograph.scss</li>
+              </ul>
+            </li>
+            <li>
+              component
+              <ul>
+                <li>_badge.scss</li>
+                <li>_button.scss</li>
+                <li>_dialog.scss</li>
+                <li>_form.scss</li>
+                <li>_gnb.scss</li>
+                <li>_list.scss</li>
+                <li>_tab.scss</li>
+                <li>_table.scss</li>
+              </ul>
+            </li>
+            <li>
+              layout
+              <ul>
+                <li>_align.scss</li>
+                <li>_footer.scss</li>
+                <li>_header.scss</li>
+                <li>_layoutbase.scss</li>
+              </ul>
+            </li>
+            <li>
+              page
+              <ul>
+                <li>_main.scss</li>
+              </ul>
+            </li>
+            <li>style.scss</li>
+          </ul>
+        </div>
+      </div>
       <h3 class="heading regular">Variables</h3>
       <h3 class="heading small">Color</h3>
       <ul class="list-type1">
@@ -143,12 +203,67 @@ $purple: #5c31d6;
 $red: #fe5957;</code>
       </pre>
       <h3 class="heading regular">Mixin</h3>
-      <div class="guide-block"></div>
+      <p class="heading xsmall">접근성 전용 숨김처리</p>
       <pre>
-<code class="html"></code>
-      </pre>
+<code class="css">@include a11y-hidden</code>
+</pre>
+      <p class="heading xsmall">배경이미지</p>
+      <pre>
+<code class="css">@include bg(이미지명, 좌표, 배경색, 크기);
+@include bg('img.svg', 10px 20px, $red, cover);</code>
+</pre>
+      <p class="heading xsmall">구분선 컴퍼넌트</p>
+      <pre>
+<code class="css">@include bar(선 or 배경선택, 가로크기, 세로크기, 좌우여백, 배경값);
+
+@include bar(line, 1px, 10px, 5px, $red);
+@include bar(img, 10px, 10px, 5px, 'bu.svg');</code>
+</pre>
+      <p class="heading xsmall">말줄임표</p>
+      <pre>
+<code class="css">@include ellipsis(말줄임표 줄수);
+@include ellipsis(2);</code>
+</pre>
+      <p class="heading xsmall">Position</p>
+      <pre>
+<code class="css">@include position(x축, x축값, y축, y축값, zindex값);
+@include position(left, 50%, top, 50%, 10);</code>
+</pre>
+      <p class="heading xsmall">반응형</p>
+      <pre>
+<code class="css">@include mobile{ 모바일전용 CSS삽입};
+
+@include mobile{ 
+  div { color:$red;}
+}
+@include tablet{
+  div { color:$blue;}
+}</code>
+</pre>
+      <p class="heading xsmall">스크롤 디자인</p>
+      <pre>
+      <code class="css">@include scroll(스크롤방향, 가로크기, 색상);
+@include scroll(right, 10px, $gray29);
+@include scroll(bottom, 10px, $gray29);</code>
+</pre>
+      <p class="heading xsmall">다크테마</p>
+      <pre>
+      <code class="css">@include theme{ CSS코드 삽입 };
+@include theme{
+  --white:red;
+};</code>
+</pre>
 
 
+      <h3 class="heading regular">Typograph</h3>
+      <ul class="list-type1">
+        <li>위치 : scss > base > _typograph.scss</li>
+        <li>REM 기준설정</li>
+        <li>font-family 지정</li>
+        <li>heading 태그 정의</li>
+        <li>텍스트 가이드 정의</li>
+        <li>텍스트 색상 정의</li>
+      </ul>
 
 
 

@@ -1,6 +1,11 @@
 :root {
   --white: #fff;
   --black: #000;
+  --black00: rgba(0, 0, 0, 0);
+  --black005: rgba(0, 0, 0, 0.05);
+  --black01: rgba(0, 0, 0, 0.1);
+  --black015: rgba(0, 0, 0, 0.15);
+  --black03: rgba(0, 0, 0, 0.3);
   --blue: #1765fd;
   --green: #4fcb8d;
   --purple: #5c31d6;
@@ -8,6 +13,7 @@
   --gray29: #292d32;
   --gray67: #67748e;
   --grayca: #cad6fe;
+  --grayca04: rgb(200, 213, 254, 0.4);
   --graycc: #ccc;
   --grayde: #dee2e6;
   --grayeb: #ebf1ff;
@@ -17,11 +23,11 @@
 
 $white: var(--white);
 $black: var(--black);
-$black00: rgba($black, 0);
-$black005: rgba($black, 0.05);
-$black01: rgba($black, 0.1);
-$black015: rgba($black, 0.15);
-$black03: rgba($black, 0.3);
+$black00: var(--black00);
+$black005: var(--black005);
+$black01: var(--black01);
+$black015: var(--black015);
+$black03: var(--black03);
 $blue: var(--blue);
 $green: var(--green);
 $purple: var(--purple);
@@ -29,7 +35,7 @@ $red: var(--red);
 $gray29: var(--gray29);
 $gray67: var(--gray67);
 $grayca: var(--grayca);
-$grayca04: rgba(var(--grayca), 0.4);
+$grayca04: var(--grayca04);
 $graycc: var(--graycc);
 $grayde: var(--grayde);
 $grayeb: var(--grayeb);

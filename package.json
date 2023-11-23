@@ -3,6 +3,6 @@
     "sass": "^1.69.5"
   },
   "scripts": {
-    "dev":"sass scss:css --watch"
+    "dev": "sass  --watch scss:css"
   }
 }

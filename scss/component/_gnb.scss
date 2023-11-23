@@ -95,7 +95,7 @@
     &::after {
       content: "\e5cf";
       @include position(right, 3.5rem, top, 50%);
-      font-family: "Material Symbols Outlined";
+      font-family: $IconFamily;
       font-size: 2rem;
       transition: 0.4s;
     }
