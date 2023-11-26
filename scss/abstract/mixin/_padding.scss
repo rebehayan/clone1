@@ -1,0 +1,39 @@
+@forward "margin";
+
+@mixin p($args...) {
+  @if length($args) == 0 {
+    @error 'padding() 믹스인은 padding 순서대로 입력하셈';
+  }
+  @each $value in $args {
+    $type: type-of($value);
+
+    @if $type == "number" or $type == "string" {
+      padding: get-number-or-string($value);
+    }
+
+    @if $type == "list" {
+      @if is-include-items($value, top t) {
+        padding-top: get-number-or-string(get-match-value-of-keys($value, top t));
+      }
+      @if is-include-items($value, right r) {
+        padding-right: get-number-or-string(get-match-value-of-keys($value, right r));
+      }
+      @if is-include-items($value, bottom b) {
+        padding-bottom: get-number-or-string(get-match-value-of-keys($value, bottom b));
+      }
+      @if is-include-items($value, left l) {
+        padding-left: get-number-or-string(get-match-value-of-keys($value, left l));
+      }
+      @if is-include-items($value, x) {
+        $x-value: get-value-after-key($value, x);
+        padding-left: get-number-or-string($x-value);
+        padding-right: get-number-or-string($x-value);
+      }
+      @if is-include-items($value, y) {
+        $y-value: get-value-after-key($value, y);
+        padding-top: get-number-or-string($y-value);
+        padding-bottom: get-number-or-string($y-value);
+      }
+    }
+  }
+}

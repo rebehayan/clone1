@@ -1,0 +1,58 @@
+@function get-number-or-string($value) {
+  @return if(type-of($value) == "number", unitless-px($value), $value);
+}
+@function unitless-px($value) {
+  @return if(unitless($value), if($value != 0, $value * 1px, $value), $value);
+}
+
+@function get-value-after-key($key-value-list, $key) {
+  $key-index: index($key-value-list, $key);
+  @return if($key-index, nth($key-value-list, $key-index + 1), null);
+}
+
+@function get-match-value-of-keys($values, $keys) {
+  $value: null;
+
+  @each $key in $keys {
+    $value: if($value, $value, get-value-after-key($values, $key));
+  }
+  @return $value;
+}
+
+@mixin m($args...) {
+  @if length($args) == 0 {
+    @error 'margin() 믹스인은 margin 순서대로 입력하셈';
+  }
+  @each $value in $args {
+    $type: type-of($value);
+
+    @if $type == "number" or $type == "string" {
+      margin: get-number-or-string($value);
+    }
+
+    @if $type == "list" {
+      @if is-include-items($value, top t) {
+        margin-top: get-number-or-string(get-match-value-of-keys($value, top t));
+      }
+      @if is-include-items($value, right r) {
+        margin-right: get-number-or-string(get-match-value-of-keys($value, right r));
+      }
+      @if is-include-items($value, bottom b) {
+        margin-bottom: get-number-or-string(get-match-value-of-keys($value, bottom b));
+      }
+      @if is-include-items($value, left l) {
+        margin-left: get-number-or-string(get-match-value-of-keys($value, left l));
+      }
+      @if is-include-items($value, x) {
+        $x-value: get-value-after-key($value, x);
+        margin-left: get-number-or-string($x-value);
+        margin-right: get-number-or-string($x-value);
+      }
+      @if is-include-items($value, y) {
+        $y-value: get-value-after-key($value, y);
+        margin-top: get-number-or-string($y-value);
+        margin-bottom: get-number-or-string($y-value);
+      }
+    }
+  }
+}
