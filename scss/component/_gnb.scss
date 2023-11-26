@@ -94,7 +94,7 @@
     position: relative;
     &::after {
       content: "\e5cf";
-      @include position(right, 3.5rem, top, 50%);
+      @include position(absolute, right, 3.5rem, top, 50%);
       font-family: $IconFamily;
       font-size: 2rem;
       transition: 0.4s;

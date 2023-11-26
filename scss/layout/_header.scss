@@ -89,7 +89,7 @@
   width: 0;
   position: relative;
   span {
-    @include position(left, 2rem, top, 50%);
+    @include position(absolute, left, 2rem, top, 50%);
     color: $gray29;
   }
   input {

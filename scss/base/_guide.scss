@@ -113,7 +113,7 @@
 }
 
 #player {
-  @include position(right, 3rem, top, 50%);
+  @include position(a, right, 3rem, top, 50%);
   width: 300px;
   height: auto;
   aspect-ratio: 16 / 9;
@@ -172,7 +172,7 @@
         position: relative;
         padding-top: 1rem;
         &::before {
-          @include position(left, 0, top, 3rem);
+          @include position(absolute, left, 0, top, 3rem);
           content: "";
           width: 1.5rem;
           height: 0;
