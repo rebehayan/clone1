@@ -453,14 +453,33 @@ body {
   text-align: center;
 }
 
-.btn.small {
-  padding: 0 12;
-  height: 34;
-  line-height: 32;
+.btns.small {
+  padding: 0 12px;
+  height: 34px;
+  line-height: 32px;
   border: 1px solid;
-  border-radius: 34;
+  border-radius: 34px;
   box-sizing: border-box;
-  font-size: 14;
+  font-size: 14px;
+}
+.btns.regular {
+  padding: 0 20px;
+  height: 40px;
+  line-height: 38px;
+  border: 1px solid;
+  border-radius: 40px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.btn.small {
+  padding: 0 12px;
+  height: 34px;
+  line-height: 32px;
+  border: 1px solid;
+  border-radius: 34px;
+  box-sizing: border-box;
+  font-size: 14px;
 }
 
 .btn.regular {

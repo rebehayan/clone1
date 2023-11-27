@@ -1,7 +1,9 @@
+@use "sass:map";
+
 // 버튼
 // 버튼사이즈
 // 클래스, 높이, 좌우여백, 폰트크기
-$btnsize: "small" 34 12 14, "regular" 40 20 16, "large" 48 22 14;
+$btnsize: "small" 34px 12px 14px, "regular" 40 20 16, "large" 48 22 14;
 
 // 버튼색
 // 클래스, 배경, 선색, 텍스트색
@@ -16,6 +18,41 @@ $btnicon: 1 b 14 16 "ico_book_white" 9, 2 a 14 16 "ico_book_black" 9;
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+$buttonSize: (
+  "small": (
+    "height": 34px,
+    "padding": 12px,
+    "fontSize": 14px,
+  ),
+  "regular": (
+    "height": 40px,
+    "padding": 20px,
+    "fontSize": 16px,
+  ),
+  "large": (
+    "height": 48px,
+    "padding": 22px,
+    "fontSize": 14px,
+  ),
+);
+
+@mixin button($size) {
+  &.#{$size} {
+    padding: 0 map-get($buttonSize, $size, "padding");
+    height: map-get($buttonSize, $size, "height");
+    line-height: map-get($buttonSize, $size, "height") - 2;
+    border: 1px solid;
+    border-radius: map-get($buttonSize, $size, "height");
+    box-sizing: border-box;
+    font-size: map-get($buttonSize, $size, "fontSize");
+  }
+}
+
+.btns {
+  @include button("small");
+  @include button("regular");
 }
 
 // 버튼크기
