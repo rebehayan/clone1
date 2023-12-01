@@ -1,4 +1,5 @@
 // import { ToggleNav } from "./ui/ToggleNav.js";
+// import _ from "lodash";
 import { Toggle } from "./ui/Toggle.js";
 import { Dialog } from "./ui/Dialog.js";
 import { Search } from "./ui/Search.js";
@@ -9,6 +10,7 @@ import { InnerTab } from "./ui/InnerTab.js";
 import { Year } from "./ui/Year.js";
 import { Theme } from "./ui/Theme.js";
 import { TreeFolder } from "./ui/TreeFolder.js";
+// import { GNB } from "./ui/GNB.js";
 // 사이드메뉴제어
 //방법1
 // ToggleNav();
@@ -32,3 +34,4 @@ InnerTab(); // 내부링크탭
 Year(); // 푸터 년도
 Theme(); //테마
 TreeFolder(); // sass 폴더구조
+// GNB();

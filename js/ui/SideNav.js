@@ -13,14 +13,14 @@ export function SideNav(option = {}) {
   }
 
   function bindEvent() {
-    $btnDepth1.forEach(function (el) {
+    $btnDepth1.forEach((el) => {
       el.addEventListener("click", openMenu);
       el.addEventListener("click", gotoPage);
     });
   }
 
   function settings() {
-    $Depth2.forEach(function (el) {
+    $Depth2.forEach((el) => {
       el.previousElementSibling.classList.add("has-depth");
     });
   }
@@ -40,11 +40,11 @@ export function SideNav(option = {}) {
   }
 
   function removeClass() {
-    $Depth2.forEach(function (el) {
+    $Depth2.forEach((el) => {
       el.classList.remove(config.activeClass);
       el.style.cssText = "";
     });
-    $btnDepth1.forEach(function (el) {
+    $btnDepth1.forEach((el) => {
       el.classList.remove(config.activeClass);
       el.classList.remove("open");
     });
@@ -83,7 +83,7 @@ export function SideNav(option = {}) {
     let currentButton = event.currentTarget;
     let currentAttr = currentButton.getAttribute("data-href");
 
-    if (currentAttr !== null) {
+    if (currentAttr != null) {
       window.location = `/pages/${currentAttr}.html`;
       event.preventDefault();
     }

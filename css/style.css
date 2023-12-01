@@ -73,6 +73,10 @@ figcaption {
   padding: 0;
 }
 
+html {
+  -webkit-text-size-adjust: none;
+}
+
 body,
 input,
 select,
