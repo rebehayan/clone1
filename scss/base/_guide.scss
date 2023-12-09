@@ -22,17 +22,17 @@
   .btn-more {
     justify-self: start;
   }
-}
-.guide-list__title {
-  display: block;
-  color: $gray29;
-  font-size: 1.8rem;
-  font-weight: 600;
-}
-.guide-list__detail {
-  font-size: 1.4rem;
-  color: $gray67;
-  line-height: 140%;
+  strong {
+    display: block;
+    color: $gray29;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  p {
+    font-size: 1.4rem;
+    color: $gray67;
+    line-height: 140%;
+  }
 }
 
 .guide-block {

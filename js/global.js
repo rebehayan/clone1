@@ -1,22 +1,16 @@
-// import { ToggleNav } from "./ui/ToggleNav.js";
-// import _ from "lodash";
-import { Toggle } from "./ui/Toggle.js";
-import { Dialog } from "./ui/Dialog.js";
-import { Search } from "./ui/Search.js";
-import { ScrollHeader } from "./ui/ScrollHeader.js";
-import { SideNav } from "./ui/SideNav.js";
-import { Fullscreen } from "./ui/Fullscreen.js";
-import { InnerTab } from "./ui/InnerTab.js";
-import { Year } from "./ui/Year.js";
-import { Theme } from "./ui/Theme.js";
-import { TreeFolder } from "./ui/TreeFolder.js";
-// import { GNB } from "./ui/GNB.js";
-// 사이드메뉴제어
-//방법1
-// ToggleNav();
+import { Dialog, Toggle, TreeFolder, SideNav, Search, ScrollHeader, InnerTab, Year, Theme, Fullscreen } from "./ui.js";
+import { header } from "./router/header.js";
+import { footer } from "./router/footer.js";
+import { sideNav } from "./router/sideNav.js";
+import { dialog } from "./router/dialog.js";
 
-// 방법2
+header();
+footer();
+sideNav();
+dialog();
+
 Toggle({
+  // 사이드메뉴제어
   button: ".btn-menu",
   target: ".side-nav",
   targetClass: "--active",
@@ -34,4 +28,3 @@ InnerTab(); // 내부링크탭
 Year(); // 푸터 년도
 Theme(); //테마
 TreeFolder(); // sass 폴더구조
-// GNB();

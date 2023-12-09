@@ -226,15 +226,13 @@ input[type=date]:valid::before {
 .guide-list .btn-more {
   justify-self: start;
 }
-
-.guide-list__title {
+.guide-list strong {
   display: block;
   color: var(--gray29);
   font-size: 1.8rem;
   font-weight: 600;
 }
-
-.guide-list__detail {
+.guide-list p {
   font-size: 1.4rem;
   color: var(--gray67);
   line-height: 140%;

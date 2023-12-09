@@ -58,16 +58,14 @@ export function SideNav(option = {}) {
 
   // 현재위치
   function currentNavigation() {
-    let url = location.href; //현재 url
-    let urlinfo = new URL(url); //url 구조분석
-    let counturl = urlinfo.pathname; // 경로부분 추출
-    let count = counturl.indexOf("/", 2); // 두번째 단어(/)부터 추출
-    let isURL = counturl.slice(count + 1, -5); // 현재파일명 추출
+    const isLocation = location.pathname;
+    const isID = isLocation.replace("/pages/", "").replace(".html", "");
+    // console.log(isID);
 
     $btnDepth1.forEach((el) => {
       let text = el.getAttribute("data-href");
 
-      if (isURL == text) {
+      if (isID == text) {
         const $ul = el.parentElement.parentElement;
 
         slideToggle($ul);

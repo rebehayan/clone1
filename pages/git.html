@@ -36,76 +36,7 @@
 </head>
 
 <body>
-  <!-- 헤더 -->
-  <header class="header">
-    <h1 class="logo"><a href="/"><span class="material-symbols-outlined">cognition</span>Project Design System Guide</a>
-    </h1>
-    <div class="search-bar">
-      <span class="material-symbols-outlined">search</span>
-      <input type="search" placeholder="Ctrl + P 검색">
-    </div>
-    <nav class="utility">
-      <ul>
-        <li><button class="btn-search"><abbr title="검색" class="material-symbols-outlined">search</abbr></button></li>
-        <li><button class="btn-fullscreen"><abbr title="전체창보기" class="material-symbols-outlined">Expand</abbr></button>
-        </li>
-        <li>
-          <button class="btn-app" data-dialog-open="dialog1"><abbr title="다른서비스" class="material-symbols-outlined">Apps</abbr></button>
-        </li>
-        <li><button class="btn-menu"><abbr title="메뉴숨기기" class="material-symbols-outlined">exit_to_app</abbr></button>
-        </li>
-        <li><button class="btn-setting" data-dialog-open="dialog2"><abbr title="사이트설정" class="material-symbols-outlined">settings</abbr></button>
-        </li>
-      </ul>
-    </nav>
-  </header>
   <div class="container">
-    <!-- 메뉴 -->
-    <nav class="side-nav">
-      <ul>
-        <li>
-          <button><span class="material-symbols-outlined">Settings_applications</span>Settings</button>
-          <ul class="depth2">
-            <li><button role="link" data-href="ide"><i class="material-symbols-outlined">edit_document</i>IDE Setting</button></li>
-            <li><button role="link" data-href="git"><i class="material-symbols-outlined">hub</i>Git Setting</button></li>
-          </ul>
-        </li>
-        <li>
-          <button><span class="material-symbols-outlined">code</span>Coding Convention</button>
-          <ul class="depth2">
-            <li><button role="link" data-href="folder"><i class="material-symbols-outlined">create_new_folder</i>Folder Guide</button></li>
-            <li><button role="link" data-href="naming"><i class="material-symbols-outlined">fingerprint</i>Naming Guide</button></li>
-            <li><button role="link" data-href="html"><i class="material-symbols-outlined">html</i>HTML Guide</button>
-            </li>
-            <li><button role="link" data-href="css"><i class="material-symbols-outlined">css</i>CSS Guide</button></li>
-            <li><button role="link" data-href="sass"><i class="material-symbols-outlined">style</i>Sass Guide</button></li>
-            <li><button role="link" data-href="js"><i class="material-symbols-outlined">javascript</i>Javascript Guide</button></li>
-            <li><button role="link" data-href="react"><i class="material-symbols-outlined">code_blocks</i>React Guide</button></li>
-            <li><button role="link" data-href="a11y"><i class="material-symbols-outlined">settings_Accessibility</i>Accessibility</button></li>
-            <li><button role="link" data-href="cross"><i class="material-symbols-outlined">crossword</i>Cross Browser</button></li>
-          </ul>
-        </li>
-        <li>
-          <button><span class="material-symbols-outlined">package_2</span>Component Guide</button>
-          <ul class="depth2">
-            <li><button role="link" data-href="color"><i class="material-symbols-outlined">colorize</i>Color</button></li>
-            <li><button role="link" data-href="typograph"><i class="material-symbols-outlined">text_fields</i>Typograph</button></li>
-            <li><button role="link" data-href="align"><i class="material-symbols-outlined">align_horizontal_left</i>Align</button></li>
-            <li><button role="link" data-href="layout"><i class="material-symbols-outlined">responsive_layout</i>Layout</button></li>
-            <li><button role="link" data-href="button"><i class="material-symbols-outlined">toggle_on</i>Button</button></li>
-            <li><button role="link" data-href="badge"><i class="material-symbols-outlined">add_reaction</i>Badge</button></li>
-            <li><button role="link" data-href="form"><i class="material-symbols-outlined">select_check_box</i>Form</button></li>
-            <li><button role="link" data-href="tab"><i class="material-symbols-outlined">tab</i>Tab</button></li>
-            <li><button role="link" data-href="table"><i class="material-symbols-outlined">table</i>Table</button></li>
-            <li><button role="link" data-href="board"><i class="material-symbols-outlined">table_view</i>Board</button></li>
-            <li><button role="link" data-href="dialog"><i class="material-symbols-outlined">Dialogs</i>Dialog</button></li>
-            <li><button role="link" data-href="carousel"><i class="material-symbols-outlined">view_Carousel</i>Carousel</button></li>
-            <li><button role="link" data-href="chart"><i class="material-symbols-outlined">insert_Chart</i>Chart</button></li>
-          </ul>
-        </li>
-        <li><button><span class="material-symbols-outlined">list_alt</span>Project Status</button></li>
-      </ul>
-    </nav>
     <main class="contents">
       <!-- 본문 -->
       <h2 class="heading large">Git Setting</h2>
@@ -118,43 +49,8 @@
       <h3 class="heading regular">Gitlab</h3>
       <h3 class="heading small">가입</h3>
       <h3 class="heading small">설정</h3>
-
     </main>
-    <footer class="footer"><span class="txt-year"></span> &copy; FE Design System by HA SUNG PIL</footer>
   </div>
-  <!-- 팝업 -->
-  <dialog class="dialog-service" data-dialog="dialog1">
-    <div class="dialog-service__header">
-      <h2>Author Apps</h2>
-      <button class="dialog-service__close" data-dialog-close="dialog1"><span class="material-symbols-outlined">close</span></button>
-    </div>
-    <ul class="dialog-service__list">
-      <li><a href=""><img src="/images/ico_drive.png" alt="">Drive</a></li>
-      <li><a href=""><img src="/images/ico_git.png" alt="">Github</a></li>
-      <li><a href=""><img src="/images/ico_gmail.png" alt="">Gmail</a></li>
-      <li><a href=""><img src="/images/ico_kakao.png" alt="">OpenChat</a></li>
-      <li><a href=""><img src="/images/ico_behance.png" alt="">Behance</a></li>
-      <li><a href=""><img src="/images/ico_lms.png" alt="">LMS</a></li>
-      <li><a href=""><img src="/images/ico_velog.png" alt="">Blog</a></li>
-      <li><a href=""><img src="/images/ico_calendar.png" alt="">Calendar</a></li>
-    </ul>
-  </dialog>
-
-  <dialog class="dialog-settings" data-dialog="dialog2">
-    <div class="dialog-settings__header">
-      <h2><span class="material-symbols-outlined">cognition</span>FE UI Settings</h2>
-      <button class="dialog-settings__close" data-dialog-close="dialog2"><span class="material-symbols-outlined">close</span></button>
-    </div>
-    <ul class="dialog-settings__list">
-      <li>
-        <label class="btn-toggle">
-          <strong>Dark / Light Mode</strong>
-          <input type="checkbox" id="checkTheme">
-        </label>
-      </li>
-    </ul>
-  </dialog>
-
 </body>
 
 </html>

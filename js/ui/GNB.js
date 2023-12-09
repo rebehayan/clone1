@@ -47,7 +47,7 @@ export function GNB() {
   ];
 
   const $gnb = document.querySelector(".gnb");
-  for (let i = 0; i < navData.length; i++) {
+  for (let i = 0; i < navData.length; i += i) {
     navData[i]?.depth ? isDepth(i) : noneDepth(i);
   }
 
@@ -60,7 +60,7 @@ export function GNB() {
       </li>
       `
     );
-    for (let idx = 0; idx < navData[i].depth.length; idx++) {
+    for (let idx = 0; idx < navData[i].depth.length; idx += idx) {
       // isDepth2(idx, i);
     }
   }
