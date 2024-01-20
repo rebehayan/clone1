@@ -1,4 +1,4 @@
-import { Dialog, Toggle, TreeFolder, SideNav, Search, ScrollHeader, InnerTab, Year, Theme, Fullscreen } from "./ui.js";
+import { IndexList, Dialog, Toggle, TreeFolder, SideNav, Search, ScrollHeader, InnerTab, Year, Theme, Fullscreen } from "./ui.js";
 import { header } from "./router/header.js";
 import { footer } from "./router/footer.js";
 import { sideNav } from "./router/sideNav.js";
@@ -28,3 +28,4 @@ InnerTab(); // 내부링크탭
 Year(); // 푸터 년도
 Theme(); //테마
 TreeFolder(); // sass 폴더구조
+IndexList();

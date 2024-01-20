@@ -46,13 +46,13 @@ export function GNB() {
     },
   ];
 
-  const $gnb = document.querySelector(".gnb");
+  const gnbEl = document.querySelector(".gnb");
   for (let i = 0; i < navData.length; i += i) {
     navData[i]?.depth ? isDepth(i) : noneDepth(i);
   }
 
   function isDepth(i) {
-    $gnb.insertAdjacentHTML(
+    gnbEl.insertAdjacentHTML(
       "beforeend",
       `
       <li>
@@ -65,8 +65,8 @@ export function GNB() {
     }
   }
   function isDepth2(idx, i) {
-    const $ul = document.createElement("ul");
-    $gnb.children[i].append($ul).insertAdjacentHTML(
+    const ulEl = document.createElement("ul");
+    gnbEl.children[i].append(ulEl).insertAdjacentHTML(
       "afterend",
       `
       <li>
@@ -77,7 +77,7 @@ export function GNB() {
   }
 
   function noneDepth(i) {
-    $gnb.insertAdjacentHTML(
+    gnbEl.insertAdjacentHTML(
       "beforeend",
       `
       <li>

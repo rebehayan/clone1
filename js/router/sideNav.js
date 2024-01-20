@@ -1,8 +1,55 @@
 export const sideNav = () => {
-  const sideEl = document.createElement("nav");
+  const navData = [
+    {
+      text: "Settings",
+      url: "",
+      class: "",
+      depth: [
+        {
+          text: "IDE Setting",
+          url: "",
+        },
+        {
+          text: "Git Setting",
+          url: "",
+        },
+      ],
+    },
+    {
+      text: "Coding Convention",
+      url: "",
+      class: "",
+      depth: [
+        {
+          text: "1",
+          url: "",
+          class: "",
+        },
+      ],
+    },
+    {
+      text: "Component Guide",
+      url: "",
+      class: "",
+      depth: [
+        {
+          text: "1",
+          url: "",
+          class: "",
+        },
+      ],
+    },
+    {
+      text: "Project Status",
+      url: "",
+      class: "",
+    },
+  ];
+  const sideEl = document.createElement("div");
   const containerEl = document.querySelector(".container");
 
   sideEl.innerHTML = /* html */ `
+    <nav>
     <ul>
       <li>
         <button><span class="material-symbols-outlined">Settings_applications</span>Settings</button>
@@ -49,8 +96,30 @@ export const sideNav = () => {
       </li>
       <li><button><span class="material-symbols-outlined">list_alt</span>Project Status</button></li>
     </ul>
-`;
+    </nav>
+
+  `;
 
   containerEl.prepend(sideEl);
   sideEl.classList.add("side-nav");
+  // sideEl.innerHTML = /* html */ `
+  //   <nav>
+  //     <ul class="side-nav">
+  //       <li>
+  //         ${navData.map((menu) => {
+  //           return menu.depth
+  //             ? /* html */ `
+  //             <button role="link" data-href="${menu.url}" class="has-depth ${menu.class}">${menu.text}</button>
+  //             <ul>
+  //               <li><button role="link" data-href="${menu.depth.url}">${menu.depth.text}</button></li>
+  //             </ul>
+  //           `
+  //             : /* html */ `
+  //             <button role="link" data-href="${menu.url}">${menu.text}</button>
+  //           `;
+  //         })}
+  //       </li>
+  //     </ul>
+  //   </nav>
+  // `;
 };

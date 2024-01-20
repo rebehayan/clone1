@@ -8,3 +8,4 @@ export { InnerTab } from "./ui/InnerTab.js";
 export { Year } from "./ui/Year.js";
 export { Theme } from "./ui/Theme.js";
 export { TreeFolder } from "./ui/TreeFolder.js";
+export { IndexList } from "./ui/Index.js";

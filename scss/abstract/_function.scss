@@ -1,3 +1,8 @@
+@function rem($value, $base: 10) {
+  $sum: $value / $base * 1rem;
+  @return $sum;
+}
+
 @function ease($keyword) {
   @if map-has-key($easings, $keyword) {
     @return map-get($easings, $keyword);
