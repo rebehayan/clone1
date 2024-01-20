@@ -1,6 +1,0 @@
-{
-  "prettier.printWidth": 1000,
-  "editor.wordWrapColumn": 1000,
-  "html.format.wrapLineLength": 1200,
-  "liveServer.settings.port": 5501
-}
